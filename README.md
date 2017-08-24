@@ -27,6 +27,6 @@
 
 效果图：
 
-<img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' />
-<img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' />
-<img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' />
+<img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' />
+
+
