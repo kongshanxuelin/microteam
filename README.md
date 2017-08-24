@@ -23,3 +23,10 @@
 使用微信扫描二维码查看效果：
 
 <img src='http://h5.sumslack.com/img/mteam1.jpg' width='320' alt='preview' />
+
+
+效果图：
+
+<img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' />
+<img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' />
+<img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' />
