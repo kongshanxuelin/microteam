@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="page__hd" style="padding:8px;">
+        <view class="page__desc" style="padding-left:15px;font-size:12px;color:#CCCCCC;">
+              加入团队确认
+        </view>
+    </view>
+    <view class="page__bd" style="margin-top:50px;">
+            
+            <view style="color:orange;font-size:14px;text-align:center">
+              【{{team.team.title}}】 已有成员 【{{team.members.length}}】 人，是否加入？
+            </view>
+
+            <view class="weui-btn-area">
+              <button class="weui-btn" type="primary" bindtap="addTeamConfirm">确认加入</button>
+            </view>
+
+            <view class="weui-msg__extra-area">
+                <view class="weui-footer">
+                    <view class="weui-footer__links">
+                        <navigator url="" class="weui-footer__link">管理您的小团队变得更加高效和有趣</navigator>
+                    </view>
+                    <view class="weui-footer__text">Copyright © 2017 Sumslack.com</view>
+                </view>
+            </view>
+
+    </view>
+</view>    

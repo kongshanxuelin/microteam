@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">选择要切换的团队：</view>
+    <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="selectChange">
+            <label class="weui-cell weui-check__label" wx:for="{{myteams}}" wx:key="value">
+                <radio value="{{item.team.id}}" checked="{{item.team.id === cTeamId}}"/>
+                <view class="weui-cell__bd">{{item.team.title}}</view>
+            </label>
+        </radio-group>
+    </view>
+
+    <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="doOK">切换团队</button>
+    </view>
+  </view>
+</view>

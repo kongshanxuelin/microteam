@@ -1,0 +1,30 @@
+<import src="../../../../components/dialog/dialog.wxml"/>
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
+
+<import src="../../../../components/button/button.wxml"/>
+<template is="button" data="{{ ...$wux.button.br }}"/>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title" style="text-align:center">{{doc.doc.title}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{docList}}" wx:key="*this">
+                <view class="weui-grid" hover-class="weui-grid_active">
+                    <image wx:if="{{item.doc.isfile=='0'}}" bindtap="navFolder" data-id="{{item.doc.id}}" class="weui-grid__icon" src="../images/folder.png" />
+                    <image bindtap="previewImage" wx:if="{{item.doc.isfile=='1' && item.file.ext=='0'}}" class="weui-grid__icon" data-src="{{item.file.path}}" src="{{item.file.spath}}" />
+                    <image bindtap="previewFile" wx:if="{{item.doc.isfile=='1' && item.file.ext=='1'}}" class="weui-grid__icon" data-src="{{item.file.path}}" data-ext="{{item.file.ext}}" src="../images/audio.png" />
+                    <image bindtap="previewFile" wx:if="{{item.doc.isfile=='1' && item.file.ext=='2'}}" class="weui-grid__icon" data-src="{{item.file.path}}" data-ext="{{item.file.ext}}" src="../images/word.png" />
+                    <image bindtap="previewFile" wx:if="{{item.doc.isfile=='1' && item.file.ext=='3'}}" class="weui-grid__icon" data-src="{{item.file.path}}" data-ext="{{item.file.ext}}" src="../images/excel.png" />
+                    <image bindtap="previewFile" wx:if="{{item.doc.isfile=='1' && item.file.ext=='4'}}" class="weui-grid__icon" data-src="{{item.file.path}}" data-ext="{{item.file.ext}}" src="../images/ppt.png" />
+                    <image bindtap="previewFile" wx:if="{{item.doc.isfile=='1' && item.file.ext=='5'}}" class="weui-grid__icon" data-src="{{item.file.path}}" data-ext="{{item.file.ext}}" src="../images/pdf.png" />
+                    <image bindtap="previewFile" wx:if="{{item.doc.isfile=='1' && item.file.ext=='6'}}" class="weui-grid__icon" data-src="{{item.file.path}}" data-ext="{{item.file.ext}}" src="../images/file.png" />
+                    <view wx:if="{{item.doc.isfile=='0'}}" bindtap="navFolder" data-id="{{item.doc.id}}" class="weui-grid__label">{{item.doc.title}}</view>
+                    <view wx:else data-id="{{item.doc.id}}" class="weui-grid__label">{{item.doc.title}}</view>
+                    <image src="../images/rt-menu.png" style="width:18px;height:18px;position: absolute;color:darkgray;right:5px;top:5px;" bindtap="showMoreMenu" data-isfile="{{item.doc.isfile}}" data-id="{{item.doc.id}}">...</image>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

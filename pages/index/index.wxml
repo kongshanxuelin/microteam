@@ -1,0 +1,68 @@
+<view class="page">
+
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="weui-article" wx:if="{{anno}}">
+            <view class="weui-article__h3">{{anno.title}}</view>
+            <view class="weui-article__p">
+              {{anno.content}}
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="/pages/working/tasklist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{taskIcon}}" class="item-image"></image>
+                    <view class="weui-badge" wx:if="{{task.taskNum>0}}"
+                    style="position: absolute;top: 8px;left: 45px;">
+                    {{task.taskNum}}
+                    </view>
+                </view>
+                <view class="weui-cell__bd marginleftspace weui-cell__ft_in-access">
+                  <view class="weui-flex flex-column">
+                    <view class="item-title">任务</view>
+                    <view class="item-desc" wx:if="{{task.taskNum>0}}">
+                    {{task.task.content}} 等 {{task.taskNum}}项新任务
+                    </view>
+                    <view class="item-desc" wx:else>当前没有新任务</view>
+                  </view>
+                </view>
+            </navigator>
+            <navigator url="/pages/working/process/mylist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{processIcon}}" class="item-image"></image>
+                    <view class="weui-badge" wx:if="{{process.num>0}}"
+                    style="position: absolute;top: 8px;left: 45px;">
+                    {{process.num}}
+                    </view>
+                </view>
+                <view class="weui-cell__bd marginleftspace weui-cell__ft_in-access">
+                  <view class="weui-flex flex-column">
+                    <view class="item-title">流程</view>
+                    <view class="item-desc" wx:if="{{process.num>0}}">
+                    {{process.pro.nick}}的{{process.pro.pd.pro.title}} 等 {{process.num}}项流程进行中
+                    </view>
+                    <view class="item-desc" wx:else>当前没有进行中的流程</view>
+                  </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="page__ft">
+       
+    </view>
+</view>    

@@ -1,0 +1,55 @@
+<view class="page">
+    <view class="page__hd">
+        <view style="font-size:13px" class="page__desc" style="padding:10px;">
+          <block wx:if="{{array.length>0}}">
+          <picker bindchange="bindPickerChange" range-key="prj_title" value="{{index}}" range="{{array}}">
+            <view class="picker">
+              当前选择：<text style="color:orange;text-decoration:underline;">{{array[index].prj_title}}</text>
+            </view>
+          </picker>
+          </block>
+          <block wx:else>
+            <text style="font-size:13px">当前团队尚未部署web项目访问监控</text>
+          </block>
+        </view>
+    </view>
+    <view class="page__bd" style="font-size:12px;" wx:if="{{array.length>0}}">
+      <view class="weui-cells__title">{{selObj.title}} 来访统计[今日访问量:<text style="font-weight:bold;color:red">{{recordsTotal}}</text>]：</view>
+        <view class="weui-cells weui-cells_after-title">
+
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd" style="text-align:center;color:orange">
+                    访问时间
+                </view>
+                <view class="weui-cell__bd" style="text-align:center;color:orange;padding-left:5px">访问页面</view>
+                <view class="weui-cell__ft" style="text-align:center;color:orange">
+                 其他信息
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" wx:for="{{listData}}" wx:key="{{code}}" hover-class="weui-cell_active">
+                <view class="weui-cell__hd" style="font-weight:bold;color:green">
+                    {{item.dt}}
+                </view>
+                <view class="weui-cell__bd" style="padding-left:5px"><text class="txt">{{item.view_page}}</text></view>
+                <view class="weui-cell__ft">
+                  <view style="display:flex;flex-direction:column">
+                    <text style="font-size:12px;">浏览器：{{item.browser}}</text>
+                    <text style="font-size:12px;">所在城市：{{item.city}}</text>
+                    <text style="font-size:12px;">OS:{{item.os}}</text>
+                    <text style="font-size:12px;">IP:{{item.ip}}</text>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page__bd" wx:else>
+        <view class="weui-article">
+          <view class="weui-article__p">
+              请将需要监控的Web站点在{{lt}}/body{{gt}}之前加入以下脚本段：
+          </view>
+          <view class="weui-article__p" style="color:orange">
+              {{lt}}script type="text/javascript" src='http://doc.idbhost.com/ue.js'{{gt}}{{lt}}/script{{gt}}          </view>
+        </view>
+    </view>
+</view>

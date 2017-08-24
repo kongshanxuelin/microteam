@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/starter/starter",
+    "pages/index/index",
+    "pages/dyna/index",
+    "pages/dyna/publish/index",
+    "pages/contact/index",
+    "pages/apps/project/detail/detail",
+    "pages/index/teamadd/teamadd",
+    "pages/index/teamchange/teamchange",
+    "pages/work/index",
+    "pages/working/index",
+    "pages/my/index",
+    "pages/apps/project/index",
+    "pages/apps/project/add/index",
+    "pages/common/selectuser/selectuser",
+    "pages/working/worknote/writenote",
+    "pages/working/task/task",
+    "pages/working/tasklist/index",
+    "pages/my/team-share/index",
+    "pages/working/netflow/index",
+    "pages/apps/anno/publish",
+    "pages/apps/sumslack_bind/index",
+    "pages/apps/stats/sign/index",
+    "pages/working/worknote/list/index",
+    "pages/my/team-share-confirm/index",
+    "pages/my/info/index",
+    "pages/working/server/index",
+    "pages/working/doc/index",
+    "pages/apps/chat/index",
+    "pages/apps/chat/message/message",
+    "pages/working/doc/list/index",
+    "pages/working/process/index",
+    "pages/working/process/mylist/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#384753",
+    "navigationBarTitleText": "小团队",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#6D6D6D",
+    "selectedColor": "#19AD19",
+    "borderStyle": "black",
+    "backgroundColor": "#F8F9F9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png",
+        "text": "小团队"
+      },
+      {
+        "pagePath": "pages/dyna/index",
+        "iconPath": "images/dyna.png",
+        "selectedIconPath": "images/dyna-active.png",
+        "text": "动态"
+      },
+      {
+        "pagePath": "pages/working/index",
+        "iconPath": "images/work.png",
+        "selectedIconPath": "images/work-active.png",
+        "text": "工作"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true
+}

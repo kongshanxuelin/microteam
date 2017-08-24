@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="page__bd" wx:if="{{!isHaveTeam}}">
+        <view class="weui-cells__title" style="margin:50rpx 0rpx;">您当前还没任务团队，请新创建一个团队或扫描团队二维码，开启您的微信办公之旅!</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input maxlength="20" bindinput="inputTeamName" class="weui-input" placeholder="团队名称，10字以内"/>
+                </view>
+            </view>
+        </view>   
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="createTeam">创建团队</button>
+            <!--
+            <view style="text-align:center;margin:5px;">或</view>
+            <button class="weui-btn" type="primary" bindtap="scanTeam">扫二维码加入团队</button>
+            -->
+        </view>
+    </view>
+    <view wx:if="{{isHaveTeam}}" style="position:absolute;top:50%;margin-top:-50px;height:100%;font-size:30rpx;text-align:center;width:100%;">
+        <view animation="{{animationData}}">微信办公，即将起航…</view>
+        <view style="margin-top:15px">
+            <button type="primary" style="width:120px;" bindtap="launchMain"> {{btn}} </button>
+        </view>
+    </view>
+</view>    

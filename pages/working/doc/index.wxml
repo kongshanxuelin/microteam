@@ -1,0 +1,45 @@
+<import src="../../../components/dialog/dialog.wxml"/>
+
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">我的文件</view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="/pages/working/doc/list/index?cate=3&pid=myfolder" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">我的文件夹</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="/pages/working/doc/list/index?cate=2&pid=mysharefolder" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">我的共享文件夹</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+
+        <view class="weui-flex">
+          <view class="weui-flex__item weui-cells__title">企业内部</view>
+          <view class="weui-flex__item weui-cells__title" style="color:orange;text-align:right" bindtap="createInnerFolder">创建文件夹</view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator wx:for="{{innerDocList}}" wx:key="{{doc.id}}" url="/pages/working/doc/list/index?cate=1&pid={{item.doc.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">{{item.doc.title}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+
+        <view class="weui-flex">
+          <view class="weui-flex__item weui-cells__title">公共目录</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator wx:for="{{shareDocList}}" wx:key="{{doc.id}}" url="/pages/working/doc/list/index?cate=1&pid={{item.doc.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">{{item.doc.title}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+
+
+        
+
+    </view>
+</view>

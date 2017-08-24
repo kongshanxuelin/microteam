@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的工作报告",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="page__bd">
+
+      <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+              <view class="weui-cell__bd">
+                  <textarea class="weui-textarea" 
+                  placeholder="说出此刻的心情..." 
+                  style="height: 3.3em"
+                  bindinput="changeContent" />
+                  <view class="weui-textarea-counter">
+                      <image src="/images/camera_dark.png" bindtap="chooseAlbum" style="width:20px;height:20px;margin-right: 5px;vertical-align: middle;"></image>
+                      <image src="/images/image.png" bindtap="chooseCamera" style="width:20px;height:20px;margin-right: 5px;vertical-align: middle;"></image>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <!--这里列出上传的图片或语音文件-->    
+      <view class="images-wrapper">
+          <view class="images-list">
+            <block wx:for-items="{{imageList}}" wx:for-item="image">
+              <view class="image-item" >
+                <image bindlongtap="removeFromImageList" src="{{image}}" 
+                  class="images-image" data-src="{{image}}" 
+                  bindtap="previewImage"></image>
+                <image data-src="{{image}}" bindtap="removeImage" src="../../../images/close.png" style="width:12px;height:12px;position:absolute;right:0;top:0;"></image>
+              </view>
+            </block>
+          </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title" bindtap="chooseLoc">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/images/address.png" style="width:25px;height:25px;margin-right: 5px;vertical-align: middle;"></image>
+                </view>
+                <view class="weui-cell__bd small">{{addr==""?"所在位置":addr}}</view>
+                <view class="weui-cell__ft small weui-cell__ft_in-access"></view>
+            </view>
+      </view>
+<!--
+      <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/images/skyk.png" style="width:25px;height:25px;margin-right: 5px;vertical-align: middle;"></image>
+                </view>
+                <view class="weui-cell__bd small">谁可以看</view>
+                <view class="weui-cell__ft small weui-cell__ft_in-access">{{viewScope}}</view>
+            </view>
+      </view>
+      -->
+      <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="pubQuan">发布动态</button>
+      </view>
+  </view>
+</view>

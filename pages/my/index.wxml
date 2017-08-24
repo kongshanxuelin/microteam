@@ -1,0 +1,105 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="container">
+            <view class="user flex-wrp">
+                <view class="avatar flex-item">
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+                </view>
+                <view class="user-info flex-item">
+                    <text class="userinfo-nickname">{{userInfo.nickName}} - {{teamName}}</text>
+                    <text class="edit"> V{{version}}:{{desc}}</text>
+                </view>
+            </view>
+
+            <view class="my" >
+                <navigator url="/pages/my/info/index" class="my-item flex-wrp">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/me.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>个人信息</text>
+                        <text  class="user-info-memo">完善您的个人信息</text>
+                    </view>
+                </navigator>
+            </view>
+            
+            <view class="my" >
+                <navigator url="/pages/contact/index" class="my-item flex-wrp">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/contact.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>团队通讯录</text>
+                        <text class="user-info-memo">当前团队下的成员名单</text>
+                    </view>
+                </navigator>
+                <navigator url="/pages/my/team-share/index" class="my-item flex-wrp">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/small.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>团队小程序码</text>
+                        <text class="user-info-memo">可将当前的小程序码通过微信消息分享给好友加入</text>
+                    </view>
+                </navigator>
+                <view class="my-item flex-wrp" ontap="switchTeam">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/switchTeam.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>切换团队</text>
+                        <text class="user-info-memo">如果您属于多个团队，可切换团队</text>
+                    </view>
+                </view>
+            </view>
+            <!--
+            <view class="my" >
+                <view class="my-item flex-wrp" ontap="doScan">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/scan.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>扫一扫</text>
+                        <text class="user-info-memo">扫描小团队的二维码</text>
+                    </view>
+                </view>
+            </view>
+           
+
+            <view class="my" >
+                <view class="my-item flex-wrp" ontap="doClearCache">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/feedback.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>意见反馈</text>
+                        <text class="user-info-memo">请将您的意见及时反馈给我们</text>
+                    </view>
+                </view>
+                <view class="my-item flex-wrp" ontap="doClearCache">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/about.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>关于我们</text>
+                        <text class="user-info-memo">通过这里了解我们</text>
+                    </view>
+                </view>
+            </view>
+            -->
+            <view class="my" >
+                <view class="my-item flex-wrp" ontap="doClearCache">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/clear.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>清空缓存</text>
+                        <text class="user-info-memo">缓存大小：{{cacheSize}} MB / {{cacheLimitSize}} MB</text>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+</view>    

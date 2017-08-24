@@ -1,0 +1,74 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+@import 'components/wux.wxss';
+
+page{
+    background-color: #E8E8E8;
+}
+
+.weui-grids {
+    margin:5px 2px 0 2px;
+    background-color: white;
+}
+
+
+.weui-cell{
+    background-color: white;
+}
+
+.page__bd {
+    margin-top: 4px;
+}
+
+.page__hd{
+    background-color: #374753;
+    color:#E8E8E8;
+}
+.weui-cell_active {
+    background-color: #E0E0E0;
+}
+
+.weui-article {
+  padding:5px 10px;
+  font-size:15px;
+}
+
+
+.my{
+  margin: 15rpx 0 0 0;
+  border-top: solid 1px #ebebeb;
+  border-bottom: solid 2px #ebebeb;
+}
+.my .my-item{
+  width: 750rpx;
+  background: #ffffff;
+  padding: 0
+}
+.my .my-item .myitem-icon{
+  flex: 1;
+}
+.my .my-item .myitem-icon image{
+  width: 85rpx;
+  height: 85rpx;
+  padding: 10rpx 0;
+}
+.my .my-item .myitem-name{
+  flex: 5;
+  text-align: left;
+  font-size: 34rpx;
+  color: #6d6d6d;
+  line-height: 32rpx;
+  padding: 25rpx 0;
+  border-bottom: solid 1px #ebebeb;
+}
+.my .my-item:last-child .myitem-name{
+  border-bottom: none;
+}
+
+.red{
+  color:red;
+  font-weight:bold;
+}
+.green{
+  color:green;
+}

@@ -1,0 +1,27 @@
+.images-wrapper {
+  padding: 20rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  color:darkgray;
+}
+.images-wrapper-text {
+  font-size: 18rpx;
+}
+.images-list {
+  display: flex;
+  margin-top: 20rpx;
+  flex-wrap: wrap;
+}
+.images-image {
+  width: 148rpx;
+  height: 148rpx;
+  margin: 5rpx;
+}
+.image-item {
+  position:relative;
+  width:220rpx;
+}
+.small{
+  font-size:0.8em;
+  color:darkolivegreen;
+}

@@ -1,0 +1,89 @@
+var App = getApp();
+Page({
+  data: {
+    isHaveTeam: true,
+    btn:"即刻进入"
+  },
+  onLoad: function (option) {
+    var that = this;
+    var _action = option.action || "";
+    App.log("microTeam", option.scene);
+    if (option.scene) {
+      var _scene = decodeURIComponent(option.scene);
+      App.log("scene:", _scene);
+      if (_scene.indexOf("s.team=") >= 0) {
+        var _shareTeamId = _scene.substring("s.team=".length, _scene.length);
+        App.log("share teamid:", _shareTeamId);
+
+        App.WxService.navigateTo('/pages/my/team-share-confirm/index?teamid=' + _shareTeamId);
+        /*
+        App.HttpServiceWork.teamShare({ token: App.getToken(), id: _shareTeamId })
+        .then(json => {
+          if(json.ret){
+            App.alert("成功加入团队!");
+          }else{
+            App.alert(json.msg || "操作失败!");
+          }
+          setTimeout(function(){
+             that.doRelauch();
+          },1500);
+        });
+        */
+      }
+    }else{
+      if (_action === "createTeam") {
+        this.setData({
+          isHaveTeam: false
+        });
+      }
+    }
+
+    if (App.globalData.networkType === "none"){
+      this.setData({
+        btn:"离线浏览"
+      })
+    }
+  },
+  doRelauch:function(){
+    wx.reLaunch({
+        url: '/pages/starter/starter'
+    });
+  },
+  onShow:function(){
+    var that = this;          
+    setTimeout(function(){
+        var animation = wx.createAnimation({  
+            duration: 1000  
+        })  
+        animation.opacity(0).scale(1.5, 1.5).step();
+        that.setData({  
+            animationData: animation.export()  
+        });    
+    },1000);      
+    
+  },
+  launchMain:function(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    });  
+  },
+  inputTeamName:function(e){
+      this.setData({
+          title:e.detail.value
+      });
+  },
+  createTeam:function(){
+      if(typeof this.data.title=== "undefined" || this.data.title === ""){
+          App.alert("请输入名称");
+          return;
+      }
+      App.HttpServiceWork.teamCreate({token:App.getToken(),title:this.data.title})
+      .then(json => {
+          if(json && json.ret && json.team){
+              App.calUserFromServer();
+          }
+      },err => {
+          console.log(err);
+      });  
+  }
+})

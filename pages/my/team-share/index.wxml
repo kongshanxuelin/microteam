@@ -1,0 +1,16 @@
+<view class="page">
+    <view class="weui-msg__text-area">
+        <view class="weui-msg__desc">分享以下小程序码给微信好友加入团队</view>
+    </view>
+    <view class="page__bd" wx:if="{{hasTeam}}">
+        <view style="text-align:center">
+          <image bindtap="previewImage" src="{{qrcode_url}}"></image>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" open-type="share" type="primary">分享给好友</button>
+        </view>
+    </view>
+    <view class="page__bd" wx:else>
+      <text>当前您还不属于任何团队.</text>
+    </view>
+</view>

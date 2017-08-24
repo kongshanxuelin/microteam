@@ -1,0 +1,5 @@
+@import './styles/common.wxss';
+@import './styles/animate.wxss';
+
+@import './styles/button.wxss';
+@import './styles/dialog.wxss';

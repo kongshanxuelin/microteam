@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">创建一个团队开始您的微信办公之旅</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input maxlength="20" bindinput="inputTeamName" class="weui-input" placeholder="团队名称，10字以内"/>
+                </view>
+            </view>
+        </view>   
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="createTeam">创建团队</button>
+        </view>
+    </view>
+</view>    

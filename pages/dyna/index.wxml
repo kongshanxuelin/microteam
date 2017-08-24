@@ -1,0 +1,149 @@
+<import src="../../components/button/button.wxml"/>
+<template is="button" data="{{ ...$wux.button.br }}"/>
+
+<view class="box" bindtap="tapBody">
+
+  <view class="top-right" longtap="bindAdd" bindtap="scrollHandle" 
+      animation="{{animationData1}}" >
+    <image class="baseimg" 
+    src="../../images/camera.png" 
+    mode="scaleToFill" 
+    catchtap="bindAdd"></image>
+  </view>
+
+  <view class="bg">
+      <image class="baseimg" src="../../images/bg.jpg" mode="scaleToFill"></image>
+  </view>
+  <!--大头像-->
+  <view class="headimg">
+      <image class="baseimg" src="{{userInfo['avatar']}}" mode="scaleToFill"></image>
+  </view>
+  <!--底部昵称-->
+  <view class="nickname">
+    <text>{{userInfo['nick']}}</text>
+  </view>
+  <!--占位行-->
+  <view class="lie"></view>
+
+  <view class="content" wx:for="{{page.result}}" wx:for-index="k">
+    <!--头像-->
+    <view class="head">
+      <image class="baseimg"  src="{{page.result[k].avatar}}" mode="scaleToFill"></image>
+    </view>
+    <!--昵称-->
+    <text class="wz">{{page.result[k].nick}}</text>
+    <!--内容-->
+    <text class="desc">{{page.result[k].content}}</text>
+
+    <!--显示上传图片-->
+      
+    <block wx:if="{{page.result[k].imageList.length == 1}}">
+        <view class="images-wrapper">
+            <view class="images-list">
+              <block wx:for="{{page.result[k].imageList}}" wx:for-item="image">
+                <image src="{{image.spath}}" class="images-image" data-src="{{image.path}}"
+                  data-count="{{page.result[k].imageList}}" bindtap="previewImage"></image>
+              </block>
+            </view>
+      </view>
+    </block>
+
+    <block wx:elif="{{page.result[k].imageList.length >= 2}}">
+      <view class="images-wrapper">
+          <view class="images-list">
+            <block wx:for="{{page.result[k].imageList}}" wx:for-item="image">
+              <image src="{{image.spath}}" class="images-image" data-src="{{image.path}}" 
+              data-count="{{page.result[k].imageList}}" bindtap="previewImage"></image>
+            </block>
+          </view>
+      </view>
+    </block>
+   
+    <!--显示地址-->
+    <block wx:if="{{page.result[k].addr != 'undefined'}}">
+        <text class="address">{{page.result[k].addr}}</text>
+    </block>
+
+    <!--显示发布时间-->
+    <text class="time">{{page.result[k].niceTime}}</text> 
+    <!--显示删除-->
+    <block wx:if="{{page.result[k].showDelete}}">
+        <text class="dele"  bindtap="bindDele" data-id="{{page.result[k].id}}" data-deleid="{{page.result[k].id}}">删除</text>
+    </block>
+    <!--显示操作小图标-->
+    <view class="biao" bindtap="bindCaoZuo"  data-id="{{page.result[k].id}}">
+      <image class="baseimg" src="/images/biao.png"></image>
+    </view>
+
+    <!--显示点赞-->
+    <block wx:if="{{page.result[k].likes && page.result[k].likes.length>0}}">
+        <view class="dianzan-box">
+          <view class="dianzan-biao">
+            <image class="baseimg" src="/images/zan.png" mode="aspectFit"></image>
+          </view>
+
+          <view class="dianzan-text">
+          <block wx:for="{{page.result[k].likes}}">
+          {{item.nick}}
+          </block>
+          </view>
+        </view>
+    </block>
+    <!--显示评论-->
+    <!--如果朋友圈下的评论不等于空 则显示当前朋友圈的评论-->
+    <block wx:if="{{page.result[k].comments && page.result[k].comments.length>0 }}">
+      <view class="pinglun-box" scroll-y>
+        <!--循环评论-->
+        <block wx:for="{{page.result[k].comments}}" wx:for-item="comm" wx:for-index="kk">
+            <!--如果pid等于null证明是发布的评论 否则是回复的评论-->
+            <block wx:if="{{comm.reply_uid && comm.reply_uid!=''}}">
+                <view class="pinglun-one" 
+              bindtap="bindPingLunB" 
+              data-fid="{{page.result[k].id}}" 
+              data-id="{{comm.id}}"
+              data-create_uid="{{comm.create_uid}}">
+                    <text class="pinglun-nickname">{{comm.reply_nick}}
+                    <text style="color:#000;">回复</text>
+                    {{comm.create_nick}}：</text>
+                    <text class="pinglun-content">{{comm.comment_content}}</text>
+                </view>
+            </block>
+
+            <block wx:else>
+                <view class="pinglun-one" 
+                bindtap="bindPingLunB" 
+                data-fid="{{page.result[k].id}}" 
+                data-id="{{comm.id}}"
+                data-create_uid="{{comm.create_uid}}">
+                    <text class="pinglun-nickname">{{comm.create_nick}}：</text>
+                    <text class="pinglun-content">{{comm.comment_content}}</text>
+                </view>
+            </block>
+            
+        </block>
+      </view>
+    </block>
+
+  </view>
+
+    <!--点赞评论标签-->
+    <view class="caozuo" style="top:{{cz_top}}px;right:{{cz_right}}rpx;padding-bottom:4px" 
+    animation="{{animationData}}">
+        <text class="dianzan" bindtap="bindDianZan">{{zan}}</text> 
+        <text class="pinglun" bindtap="bindPingLunA">评论</text>
+    </view>
+
+    <view  hidden="{{!showComment}}" class="commentbox">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input focus="{{commentFocus}}" class="weui-input" 
+                    placeholder="{{commentInput}}" confirm-type="done" 
+                    bindblur="bindAddCommentBlur"
+                    bindconfirm="bindAddComment" value="{{commentContent}}"/>
+                </view>
+            </view>
+        </view>    
+    </view>
+
+</view>

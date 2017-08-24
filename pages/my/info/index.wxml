@@ -1,0 +1,78 @@
+<view class="page">
+    <view class="page__bd" style="margin-top:10px;">
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" value="{{user.truename}}" bindinput="bindInputValue" data-name="truename" placeholder="输入真实姓名"/>
+                  </view>
+              </view>
+            </view>
+
+            <view class="weui-cells__title">个人签名</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__bd">
+                      <textarea class="weui-textarea" 
+                        placeholder="输入个人签名" 
+                        value="{{user.sign}}"
+                        bindinput="bindInputValue" data-name="sign"
+                        style="height: 3.3em" />
+                  </view>
+              </view>
+            </view>
+
+            <view class="weui-cells__title">手机号码</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" 
+                      value="{{user.tel}}"
+                      bindinput="bindInputValue" data-name="tel" 
+                      type="text" placeholder="输入手机号码" />
+                  </view>
+              </view>
+            </view>
+
+            <view class="weui-cells__title">所在部门/小组</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" disabled="true"
+                      value="{{user.dept_name}}"
+                      bindinput="bindInputValue" data-name="dept_id" 
+                      placeholder="选择所在部门" />
+                  </view>
+                  <view class="weui-cell__ft" style="padding-right:10px">
+                      <view bindtap="chooseDept">选择</view>
+                  </view>
+              </view>
+            </view>
+
+            <view class="weui-cells__title">公司邮箱</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" value="{{user.email}}" bindinput="bindInputValue" data-name="email" placeholder="输入公司邮箱" />
+                  </view>
+              </view>
+            </view>
+
+            <view class="weui-cells__title">住址</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">住址</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" value="{{user.addr}}" bindinput="bindInputValue" data-name="addr" placeholder="输入家庭住址" />
+                  </view>
+                  <view class="weui-cell__ft"  style="padding-right:10px">
+                      <view bindtap="chooseLoc">选择</view>
+                  </view>
+              </view>
+            </view>
+            <view class="weui-btn-area">
+              <button class="weui-btn" type="primary" bindtap="saveInfor">保存个人信息</button>
+            </view>
+    </view>
+</view>    

@@ -1,0 +1,46 @@
+<view class="page">
+    <view class="page__hd" style="padding:8px;">
+        <view class="page__desc" wx:if="{{hasBind}}" style="padding-left:15px;font-size:12px;color:#CCCCCC;">
+        已绑定Sumslack账号,<text style="color:orange">
+        {{sumslackUser.name}}({{sumslackUser.nick}})</text>，你可以重绑：
+        </view>
+        <view class="page__desc" wx:else style="padding-left:15px;font-size:12px;color:#CCCCCC;">
+        绑定Sumslack账号，可以更好的与Sumslack移动端交互，强烈推荐绑定
+        </view>
+    </view>
+    <view class="page__bd" style="margin-top:10px;">
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">账号</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" bindinput="bindUser" placeholder="请输入Sumslack账号"/>
+                  </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">密码</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" bindinput="bindPwd" type="password" placeholder="请输入Sumslack密码" />
+                  </view>
+              </view>
+            </view>
+            <view class="weui-btn-area">
+              <button class="weui-btn" type="primary" bindtap="bindSumslack">{{btnLabel}}</button>
+            </view>
+
+            <view class="weui-msg__extra-area">
+                <view class="weui-footer">
+                    <view class="weui-footer__links">
+                        <navigator url="" class="weui-footer__link">请在苹果商店搜索 Sumslack 下载App</navigator>
+                    </view>
+                    <view class="weui-footer__text">Copyright © 2017 Sumslack.com</view>
+                </view>
+            </view>
+
+    </view>
+</view>    

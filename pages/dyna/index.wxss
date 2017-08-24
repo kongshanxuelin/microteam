@@ -1,0 +1,290 @@
+  .box
+ {
+   background-color: #fff;
+ }
+  .top-right
+ {
+   width:28px;
+   height:28px;
+   position:absolute;
+   right:20px;
+   top:20px;
+   overflow:hidden;
+   z-index:9999;
+ }
+ .bg
+ {
+   height: 400rpx;
+   /*background: red;*/
+   overflow:hidden;
+ }
+ .baseimg
+ {
+   width:100%;
+   height:100%;
+ }
+  .headimg
+ {
+   width: 150rpx;
+   height: 150rpx;
+   position:absolute;
+   border: 2px solid #fff;
+   margin-top: -100rpx;
+   margin-left: 570rpx;
+   overflow:hidden;
+ }
+ .nickname
+ {
+   width:400rpx;
+   text-align: right;
+   position:absolute;
+   color:#fff;
+   margin-top: -70rpx;
+   margin-left: 150rpx; 
+   font-size:14pt;
+   font-weight:600;
+   /*border:1px solid red;*/
+   
+ }
+  .lie
+ {
+   /*border: 1px solid #ccc;*/
+   margin-top: 100rpx;
+   flex-direction: column;
+ }
+
+
+ .content
+ {
+    border-bottom:1px solid #F5F5F5;
+    display:flex;
+    flex-direction: column;
+    padding-bottom:20rpx;
+ }
+
+
+ .head
+ {
+   width: 80rpx;
+   height: 80rpx;
+   /*background: darkcyan;*/
+   margin-top:20rpx;
+   margin-left:20rpx;
+   overflow:hidden;
+ }
+
+ .wz
+ {
+   margin-top:-80rpx;
+   margin-left:120rpx;
+   font-size:10pt;
+   color:#576b95;
+ }
+
+ .desc
+ {
+   margin-top:20rpx;
+   margin-left:120rpx;
+   font-size:10pt;
+ }
+
+ .address
+ {
+   margin-top:20rpx;
+   height:30rpx;
+   font-size:10pt;
+   color:#576b95;
+   margin-left:120rpx;
+   margin-bottom:20rpx;
+   width:600rpx;
+ }
+
+ .time
+ {
+  margin-top:20rpx;
+   width:140rpx;
+   height:30rpx;
+   font-size:10pt;
+   color:#ccc;
+   margin-left:120rpx;
+ }
+
+ .dele
+ {
+   margin-top:20rpx;
+   width:80rpx;
+   height:30rpx;
+   font-size:10pt;
+   color:#576b95;
+    margin-top:-28rpx;
+    margin-left:270rpx;
+ }
+
+ .biao
+ {
+   width: 50rpx;
+   height:40rpx;
+   overflow:hidden;
+   margin-top:-32rpx;
+   margin-left:680rpx;
+   margin-bottom:20rpx;
+ }
+
+.caozuo
+{
+  width:250rpx;
+  height:40rpx;
+  background:rgba(0,0,0,0.6);
+  font-size:12px;
+  color:#fff;
+  font-weight:600;
+  position:absolute;
+  border-radius:2px; 
+  overflow:hidden;
+  opacity: 0;
+}
+
+.commentbox
+{
+  width:720rpx;
+  height:80rpx;
+  background:rgba(90,90,90,0.6);
+  font-size:12px;
+  color:black;
+  font-weight:bold;
+  position:fixed;
+  overflow:hidden;
+  bottom:0;
+  right:0rpx;
+  
+}
+
+.dianzan
+{
+  position:absolute;
+  width:120rpx;
+  top:5rpx;
+  left:0;
+  text-align:center;
+}
+
+/*点赞*/
+.dianzan-box
+{
+  width:600rpx;
+  height:auto;
+  margin-left:110rpx;
+  background:#F3F3F5;
+  border-bottom: 1px solid #eee;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.dianzan-biao
+{
+  width:35rpx;
+  height:35rpx;
+  position:relative;
+  overflow:hidden;
+  margin-left: 15rpx;
+}
+
+.dianzan-text
+{
+  position:relative;
+  color:#576b95;
+  font-size:10pt;
+  margin-top:-29rpx;
+  margin-left:50rpx;
+}
+
+
+
+/*评论*/
+.pinglun
+{
+  position:absolute;
+  width:120rpx;
+  border-left: 1px solid #ccc;
+  right:0;
+  top:5rpx;
+  text-align:center;
+}
+
+.pinglun-box
+{
+  width:600rpx;
+  height:auto;
+  margin-left:110rpx;
+  background:#F3F3F5;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pinglun-one
+{
+  /*border-bottom: 1px solid #ccc;*/
+  padding-bottom:5rpx;
+}
+
+.pinglun-nickname
+{
+  color:#576b95;
+  font-size:10pt;
+   margin-left: 15rpx;
+}
+
+.pinglun-content
+{
+  color:#000;
+  font-size:10pt;
+}
+
+
+
+
+
+
+
+
+/*图片*/
+.images-wrapper {
+  padding: 20rpx;
+  background-color: #fff;
+  margin-left: 80rpx;
+}
+.images-wrapper-text {
+  font-size: 28rpx;
+}
+.images-list {
+  display: flex;
+  margin-top: 20rpx;
+  flex-wrap: wrap;
+}
+.images-image {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+.image-plus {
+  border: 1px solid #999;
+  position: relative;
+}
+.image-plus-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #d9d9d9;
+  width: 4rpx;
+  height: 80rpx;
+  transform: translate(-50%, -50%);
+}
+.image-plus-vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #d9d9d9;
+  width: 80rpx;
+  height: 4rpx;
+  transform: translate(-50%, -50%);
+}

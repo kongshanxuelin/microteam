@@ -1,0 +1,18 @@
+<view class="page">
+    <view class="page__bd">
+       xxxxxx
+    </view>
+    <view class="page__ft" style="position:fixed;bottom:10rpx;">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+                添加任务
+            </view>
+            <view class="weui-flex__item">
+                过滤任务
+            </view>
+            <view class="weui-flex__item" bindtap="editProject">
+                编辑项目
+            </view>
+        </view>
+    </view>
+</view>    

@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="page__bd">
+    <radio-group wx:if="{{mode == 'single'}}" bindchange="selectChange">
+        <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="uid">
+            <radio value="{{item.uid}}" checked="{{item.checked}}"/>
+            <image src="{{item.avatar}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            <view class="weui-cell__bd">{{item.nick}}</view>
+        </label>
+    </radio-group>
+    <checkbox-group wx:if="{{mode == 'multi'}}" bindchange="selectChange">
+          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="uid">
+              <checkbox value="{{item.uid}}" checked="{{item.checked}}"/>
+              <image src="{{item.avatar}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+              <view class="weui-cell__bd">{{item.nick}}</view>
+          </label>
+    </checkbox-group>
+    <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="doOK">确定</button>
+    </view>
+  </view>
+</view>
