@@ -31,7 +31,9 @@
     "pages/apps/chat/message/message",
     "pages/working/doc/list/index",
     "pages/working/process/index",
-    "pages/working/process/mylist/index"
+    "pages/working/process/mylist/index",
+    "pages/paper/index",
+    "pages/paper/share/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

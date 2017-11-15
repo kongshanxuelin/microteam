@@ -42,6 +42,7 @@ class Service extends ServiceBase {
 			fb_list		: 'feedback/list.jhtml',
 			fb_add		: 'feedback/addFeedback.jhtml',
 			fb_remove	: 'feedback/removeFeedback.jhtml',
+
 			fb_reply	: 'feedback/addReply.jhtml'
 			
         }
@@ -114,7 +115,8 @@ class Service extends ServiceBase {
 
 	deleteAddress(id, params) {
 		return this.deleteRequest(`${this.$$path.address}/${id}`)
-	}
+  } 
+
 	
 }
 

@@ -1,0 +1,32 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="weui-flex cardBack" style="margin:10px;border:5px solid #fff;">
+           <view class="weui-flex__item">
+              <view class="weui-flex-row box-tb" style="margin-left:10px;margin-top:10px;margin-bottom:10px;color:#333;">
+                <view class="weui-flex__item name">{{paper.title}}</view>
+                <view class="weui-flex__item title" style="margin-top:10px">{{paper.d}}</view>
+                <view wx:if="{{t!='paper'}}" class="weui-flex__item desc" style="margin-top:10px">我在本测试题中获得了 <text class="fs">{{score}}</text> 分，打败了 <text class="fs">{{rate}}</text> 的答题者！</view>
+              </view>  
+           </view>
+           <view style="position:absolute;top:8px;right:8px;">
+            <image src="{{paper.logo}}" mode="aspectFit" style="height: 30px;width:30px;border-radius:10px;" />
+           </view>
+        </view>
+    </view>
+    <view class="page__bd">
+        
+        <!-- -->
+        <view class="cardBtnItem" style="margin:20px 0px;">
+           <view class="weui-flex justcontent-center">
+            <image style="width:24px;height:24px;margin-right:5px;" src="../../../images/quan.png"></image>
+            <text bindtap="share2Quan">点我生成图片分享到朋友圈</text>
+          </view>
+        </view>
+       
+        <view style="margin:0px 15px 30px 15px">
+        <button type="default"  style="margin-bottom:10px;" bindtap="doStart">开始答题</button>
+        <button type="primary" open-type="share" style="margin-bottom:10px;" bindtap="doFinishConfirmOK">分享给朋友</button>
+        </view>
+       
+    </view>
+</view>    

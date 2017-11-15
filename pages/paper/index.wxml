@@ -1,0 +1,2 @@
+<web-view src="{{path}}"></web-view>
+

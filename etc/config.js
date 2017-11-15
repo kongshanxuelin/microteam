@@ -6,6 +6,11 @@ export default {
  */
 
 	/* production  */
+  domain: 'https://wx.sumslack.com/',
+  paperPath: 'https://wx.sumslack.com/restful/',
+  paperuploadPath: "https://wx.sumslack.com/upload/",
+  
+
   workPath: 'https://wx.sumslack.com/microteam/',
   basePath: 'https://wx.sumslack.com/microteam/r/',
   uploadPath: "https://wx.sumslack.com/microteam/upload/",

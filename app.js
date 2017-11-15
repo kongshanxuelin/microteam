@@ -2,6 +2,7 @@ import polyfill from 'assets/plugins/polyfill'
 import WxValidate from 'helpers/WxValidate'
 import HttpResource from 'helpers/HttpResource'
 import HttpService from 'helpers/HttpService'
+import HttpServicePaper from 'helpers/HttpServicePaper'
 import HttpServiceWork from 'helpers/HttpServiceWork'
 import WxService from 'helpers/WxService'
 import Tools from 'helpers/Tools'
@@ -269,6 +270,7 @@ App({
   WxValidate: (rules, messages) => new WxValidate(rules, messages), 
 	HttpResource: (url, paramDefaults, actions, options) => new HttpResource(url, paramDefaults,      actions, options).init(), 
 	HttpService: new HttpService, 
+  HttpServicePaper: new HttpServicePaper,
   HttpServiceWork:new HttpServiceWork,
 	WxService: new WxService, 
 	Tools: new Tools, 
