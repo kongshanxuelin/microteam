@@ -48,3 +48,16 @@
   font-size:24rpx;
   color:darkgrey;
 }
+
+.weui-grids {
+  margin:6px 0px 6px 0px;
+  background-color:white;
+}
+
+.weui-grid {
+  position:relative;
+  float:left;
+  padding:4px;
+  width:20%;
+  box-sizing:border-box;
+}

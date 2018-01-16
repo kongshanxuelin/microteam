@@ -3,6 +3,13 @@
 var App = getApp()
 Page({
   data: {
+    navButtons: [
+      { text: "指派任务", icon: "../../images/working/task.png", link: "/pages/working/task/task" },
+      { text: "工作日志", icon: "../../images/working/note.png", link: "/pages/working/worknote/writenote?act=day&tmplId=lkbcyn5beo" },
+      { text: "团队文档", icon: "../../images/working/document.png", link: "/pages/working/doc/index" },
+      { text: "试题秀", icon: "../../images/doc.png", link: "/pages/paper/index" },
+      { text: "邀请加入", icon: "../images/share.png", link: "/pages/my/team-share/index" }
+    ],
     icon: '../../images/home.png',
     taskIcon:'../../images/working/task.png',
     processIcon:'../../images/working/process.png',
