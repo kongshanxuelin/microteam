@@ -1,0 +1,21 @@
+.page__bd {
+  width:100%;
+  margin:0 auto;
+  margin-top:50px;
+  text-align: center;
+}
+.info {
+  color: green;
+  font-size:14px;
+}
+.btnok {
+  margin-top:20px;
+  width:80%;
+  background-color: #136C5E;
+  color: #FFEBC8;
+}
+.info2 {
+  color: orangered;
+  font-size:14px;
+  margin-top:20px;
+}

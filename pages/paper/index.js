@@ -16,16 +16,21 @@ Page({
       var t = options.type;
       var id = options.id;
       console.log("create:",t,id)
-      if(typeof(t)!="undefined" && id!=""){
+      if (typeof (t) != "undefined" && t === "bond"){
         this.setData({
-          path: App.Config.domain + "paper/" + id
+          path: App.Config.domain + "bond/" + id
         });
       }else{
-        this.setData({
-          path: App.Config.domain + "?token=" + token
-        });
+        if(typeof(t)!="undefined" && id!=""){
+          this.setData({
+            path: App.Config.domain + "paper/" + id
+          });
+        }else{
+          this.setData({
+            path: App.Config.domain + "?token=" + token
+          });
+        }
       }
-      
       console.log("load webview url:", this.data.path)
   },
 

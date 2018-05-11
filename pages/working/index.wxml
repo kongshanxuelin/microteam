@@ -37,7 +37,7 @@
                         </navigator>
                     </view>
                 </view>
-                <!--
+              
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <navigator url="/pages/apps/chat/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
@@ -49,7 +49,7 @@
                         </navigator>
                     </view>
                 </view>
-                -->
+            
             </view>
         </view>
 

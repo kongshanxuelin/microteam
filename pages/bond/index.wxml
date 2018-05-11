@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="page__bd">
+    <image mode="scaleToFill" bindtap='clickImage' data-src='{{imageUrl}}' src='{{imageUrl}}'></image>
+    
+    <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap='addFileFromCamera'>拍照识别</button>
+            <button class="weui-btn" open-type="share" type="default">分享给好友</button>
+
+            <button class="weui-btn" bindtap='shareQrCode' type="default">小程序码分享</button>
+    </view>
+    <view class="section__title">对准债券代码拍照即可，平行于屏幕拍照有利于提供识别准确率</view>
+      
+    <view class="weui-cells weui-cells_after-title">
+        <block wx:for="{{bonds}}">
+          <view class="weui-cell" bindtap='goBondDetail' wx:for-item="bond" wx:for="{{item.bonds}}"  data-id="{{bond.bondkey}}">
+              <view class="weui-cell__bd">{{bond.bondid}}</view>
+              <view class="weui-cell__ft">{{bond.shortname}}</view>
+          </view>
+        </block>
+    </view>
+
+  </view>
+</view>

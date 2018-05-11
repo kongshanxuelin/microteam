@@ -1,25 +1,44 @@
-<scroll-view scroll-y="true">
-  <view class="tips" wx:if="{{!list.length}}">
-    正在载入聊天列表，请稍候...
-  </view>
-  <view class="item-avatar-md" wx:for="{{list}}" wx:key="i.id" wx:for-item="i" wx:for-index="index" data-index="{{index}}" data-name="{{i.name}}" data-id="{{i.id}}" bindtap="goPage">
-          <view class="marks" wx:if="{{i.count}}">
-            <text>{{i.count}}</text>
-          </view>
-          <image src="{{i.avatar}}"></image>
-          <view class="item-text">
-            <view class="text_box">
-              <view class="flex">
-                <text class="title">{{i.name}}</text>
-              </view>
-              <view class="flex">
-                <text class="message">{{i.text}}</text>
-              </view>
-            </view>
-          </view>
-          <view class="item-time padding_half">
-            <text class="messagetime">{{i.updated}}</text>
-          </view> 
-  </view>
+<view class="container">
+    <import src="/template/addtell.wxml"/>
+    <template is="addtell" data="{{...addtell}}"/>
+  <!--反馈内容-->
+     <ul class="scrollwechat"  bindtap="closeimg">
+      <scroll-view class="scrollview" scroll-y="true" >
+      <block  wx:for="{{feedback}}" wx:key="index">
+       <li wx:if="{{item.myDate}}" class="mydate">
+            <view class="mydatebox">
+              <text class="mydatetext">{{item.myDate}}</text>
+             </view>
+        </li>
+      <li class="{{item.role?'sys':'user'}}">
+      <!--头像-->
+        <view class="{{item.role?'imgview1':'imgview2'}}"><image class="headimg" src="{{item.img}}"></image></view>
+        <!--三角-->
+         <view class="triangle">
+              <image wx:if="{{item.role}}"  src="../../images/hotapp_triangleRight.png"></image>
+              <image wx:else  src="../../images/hotapp_triangleLeft.png"></image>
+         </view>
+         <!--内容 ：图片/文字-->
+        <view class="{{item.role?'textview2':'textview'}}">
+          <view class="feedbackimg" wx:if="{{item.content_type}}">  <image  src="{{item.content}}"></image></view>
+          <text class="feedbacktext" wx:else>{{item.content}}</text>
+        </view>
+        <view wx:if="{{networkType=='fail'}}"><icon type="warn" size="20"/></view>
+        <view class="{{item.role?'imgview1':'imgview2'}}"></view>
+      </li>
+      </block>
+      <view class="link"></view>
+       </scroll-view>
+    </ul>
 
-</scroll-view>
+ 
+  <!--提交框-->
+  <view  class="footer">
+      <view  class="footinput">
+        <view class="input"><input bindfocus="bindfocus" bindblur='bindblur'  value="{{addinput}}" type="text" /></view>
+      </view>
+      <view wx:if="{{sendflag}}" class="foodsend">
+        <view class="send">发送</view>
+      </view>
+  </view>
+</view>

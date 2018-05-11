@@ -1,25 +1,39 @@
 <view class="page">
-    <view class="page__bd" wx:if="{{!isHaveTeam}}">
-        <view class="weui-cells__title" style="margin:50rpx 0rpx;">您当前还没任务团队，请新创建一个团队或扫描团队二维码，开启您的微信办公之旅!</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__bd">
-                    <input maxlength="20" bindinput="inputTeamName" class="weui-input" placeholder="团队名称，10字以内"/>
-                </view>
-            </view>
-        </view>   
-        <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="createTeam">创建团队</button>
-            <!--
-            <view style="text-align:center;margin:5px;">或</view>
-            <button class="weui-btn" type="primary" bindtap="scanTeam">扫二维码加入团队</button>
-            -->
-        </view>
+    <view class="page__bd" wx:if="{{!isGrant}}">
+      <text class="info">使用小团队，须先授权登录，点击以下按钮继续：</text>
+      <open-data type="userAvatarUrl"></open-data>
+      <open-data type="userNickName"></open-data>
+      <block wx:if="{{canIUse}}">
+      <button class="btnok" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+
+      <view class="info2">一款小团队绩效考核工具，免费开源，欢迎star：https://github.com/kongshanxuelin/microteam</view>
+      </block>
+
+      <view class="info" wx:else>请升级微信版本</view>
     </view>
-    <view wx:if="{{isHaveTeam}}" style="position:absolute;top:50%;margin-top:-50px;height:100%;font-size:30rpx;text-align:center;width:100%;">
-        <view animation="{{animationData}}">微信办公，即将起航…</view>
-        <view style="margin-top:15px">
-            <button type="primary" style="width:120px;" bindtap="launchMain"> {{btn}} </button>
-        </view>
-    </view>
+    <block wx:else>
+      <view class="page__bd" wx:if="{{!isHaveTeam}}">
+          <view class="weui-cells__title" style="margin:50rpx 0rpx;">您当前还没任务团队，请新创建一个团队或扫描团队二维码，开启您的微信办公之旅!</view>
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__bd">
+                      <input maxlength="20" bindinput="inputTeamName" class="weui-input" placeholder="团队名称，10字以内"/>
+                  </view>
+              </view>
+          </view>   
+          <view class="weui-btn-area">
+              <button class="weui-btn" type="primary" bindtap="createTeam">创建团队</button>
+              <!--
+              <view style="text-align:center;margin:5px;">或</view>
+              <button class="weui-btn" type="primary" bindtap="scanTeam">扫二维码加入团队</button>
+              -->
+          </view>
+      </view>
+      <view wx:if="{{isHaveTeam}}" style="position:absolute;top:50%;margin-top:-50px;height:100%;font-size:30rpx;text-align:center;width:100%;">
+          <view animation="{{animationData}}">微信办公，即将起航…</view>
+          <view style="margin-top:15px">
+              <button type="primary" style="width:120px;" bindtap="launchMain"> {{btn}} </button>
+          </view>
+      </view>
+    </block>
 </view>    

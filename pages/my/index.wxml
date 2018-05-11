@@ -22,6 +22,18 @@
                     </view>
                 </navigator>
             </view>
+
+            <view class="my" >
+                <navigator url="/pages/bond/index" class="my-item flex-wrp">
+                    <view class="myitem-icon flex-item" >
+                        <image src="../../images/scan.png"></image>
+                    </view>
+                    <view class="myitem-name flex-item">
+                        <text>债券扫一扫</text>
+                        <text  class="user-info-memo">扫一扫，立查债券详情</text>
+                    </view>
+                </navigator>
+            </view>
             
             <view class="my" >
                 <navigator url="/pages/contact/index" class="my-item flex-wrp">

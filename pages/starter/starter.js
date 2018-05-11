@@ -1,11 +1,25 @@
 var App = getApp();
 Page({
   data: {
+    isGrant:false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHaveTeam: true,
     btn:"即刻进入"
   },
   onLoad: function (option) {
     var that = this;
+    //查看用户是否有过授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          App.log("用户已授权过.")
+          that.setData({
+            isGrant: true
+          });
+        }
+      }
+    });
+    
     var _action = option.action || "";
     App.log("microTeam", option.scene);
     if (option.scene) {
@@ -16,7 +30,7 @@ Page({
         App.log("share teamid:", _shareTeamId);
 
         App.WxService.navigateTo('/pages/my/team-share-confirm/index?teamid=' + _shareTeamId);
-        /*
+        
         App.HttpServiceWork.teamShare({ token: App.getToken(), id: _shareTeamId })
         .then(json => {
           if(json.ret){
@@ -28,7 +42,9 @@ Page({
              that.doRelauch();
           },1500);
         });
-        */
+        
+      } else if (_scene == 'bond') {
+        App.WxService.navigateTo("/pages/bond/index");
       }
     }else{
       if (_action === "createTeam") {
@@ -85,5 +101,10 @@ Page({
       },err => {
           console.log(err);
       });  
+  },
+  bindGetUserInfo: function (e) {
+    setTimeout(() => {
+      this.doRelauch();
+    },500);
   }
 })
