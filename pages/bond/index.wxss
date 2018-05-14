@@ -1,6 +1,6 @@
 .img {
   width: 100%;
-  height: 350px;
+  text-align: center;
 }
 .page {
   margin: 5px;
@@ -9,6 +9,15 @@
   margin:0;
 }
 .section__title {
+  color:grey;
+  font-size: 12px;
+}
+.yw {
+  color:grey;
+  font-size: 12px;
+}
+
+.yw2 {
   color:grey;
   font-size: 12px;
 }

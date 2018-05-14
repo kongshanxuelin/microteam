@@ -21,7 +21,7 @@
         </view>
 
         <view class="weui-cells weui-cells_after-title">
-            <view wx:for="{{projects}}" wx:key="*this" data-projectid="{{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="projectTap">
+            <view wx:for="{{projects}}" wx:key="*this" data-projectid="{{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='projectRemove'>
                 <view class="weui-cell__hd">
                     <image src="{{item.owner.avatar}}" style="margin-right: 5px;vertical-align: middle;width:28px; height: 28px;"></image>
                 </view>
@@ -30,5 +30,7 @@
             </view>
            
         </view>
+
+        <view class="desc">注：长按删除项目，添加项目时只有项目的参与者和负责人才能在列表中显示，项目被用于编写工作日志和分配任务等模块中</view>
     </view>
 </view>    

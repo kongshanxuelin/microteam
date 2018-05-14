@@ -59,6 +59,15 @@ Page({
   addProject:function(){
 
   },
+  projectRemove:function(e){
+    var that = this;
+    var _id = e.currentTarget.dataset.projectid;
+    App.confirm("是否确认删除此项目？", function () {
+      App.HttpServiceWork.projectRemove({ token: App.getToken(), id: _id }).then(json => {
+        that.listProjects();
+      });
+    });
+  },
   goProjectAdd:function(){
       App.WxService.navigateTo('/pages/apps/project/add/index');
   },

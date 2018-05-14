@@ -1,3 +1,6 @@
+<import src="../../components/button/button.wxml"/>
+<template is="button" data="{{ ...$wux.button.br }}"/>
+
 <view class="page">
     <view class="page__bd">
         <block wx:if="{{anno && anno.title!=null}}">

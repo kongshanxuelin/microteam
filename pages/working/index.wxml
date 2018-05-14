@@ -7,7 +7,7 @@
     <view class="page__bd" style="margin-bottom:20rpx;">
 
         <view bindtap="goAllAppPage" style="display:flex;margin-top:5px;flex-direction:row-reverse;">
-          <text style="height:20px;line-height:20px;font-size:14px;padding-right:8px;">全部应用</text>
+          <text style="height:20px;line-height:20px;font-size:14px;padding-right:8px;">应用管理</text>
           <image src="../../images/all.png" style="margin-right:4px;width:20px;height:20px;"></image>
         </view>
 
@@ -20,7 +20,7 @@
                         <navigator url="/pages/working/doc/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd"><image src="../../images/doc.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                             <view class="weui-cell__bd weui-cell_primary">
-                                <view>共享文档</view>
+                                <view class="title pb8">共享文档</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                         </navigator>
@@ -31,13 +31,14 @@
                         <navigator url="/pages/paper/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd"><image src="../../images/doc.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                             <view class="weui-cell__bd weui-cell_primary">
-                                <view>试题秀</view>
+                                <view class="title pb8">试题秀</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                         </navigator>
                     </view>
                 </view>
               
+              <!--
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <navigator url="/pages/apps/chat/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
@@ -49,15 +50,18 @@
                         </navigator>
                     </view>
                 </view>
-            
+              -->
+
             </view>
         </view>
 
         <template is="sign" data="{{workoff_time:signInfor.workoff_time,workon_time:signInfor.workon_time,signin_time:signInfor.signin_time||'',signout_time:signInfor.signout_time||''}}"/>
         <template is="task" data="{{text: 'forbar'}}"/>         
         <template is="note" data="{{text: 'forbar'}}"/> 
-        <template is="report" data="{{text: 'forbar'}}"/>
 
+        <!--
+        <template is="report" data="{{text: 'forbar'}}"/>
+        -->
         <view class="weui-panel">
               <view class="weui-panel__hd">团队流程</view>
               <view class="weui-panel__bd">
@@ -74,7 +78,7 @@
                             <view bindtap="startProcess" data-id="{{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                                 <view class="weui-cell__hd"><image src="../images/process.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                                 <view class="weui-cell__bd weui-cell_primary">
-                                    <view>{{item.title}}</view>
+                                    <view class="title pb8">{{item.title}}</view>
                                 </view>
                                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                             </view>

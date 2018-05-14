@@ -33,6 +33,21 @@ page{
   font-size:15px;
 }
 
+.desc {
+ margin-top:20px;
+ margin-left: 10px;
+ margin-right: 10px;
+ margin-bottom: 20px;
+ color:darkcyan;
+ font-size: 13px;
+}
+.title {
+  font-size:14px;
+  color:#374753;
+}
+.pb8 {
+  padding-bottom: 8px;
+}
 
 .my{
   margin: 15rpx 0 0 0;

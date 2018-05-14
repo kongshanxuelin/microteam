@@ -94,18 +94,48 @@ Page({
   },
   addFileFromCamera: function () {
     var that = this;
-    wx.chooseImage({
-      sourceType: ['camera'],
-      sizeType: ['compressed'],
-      count: 1,
+    wx.showActionSheet({
+      itemList: ['拍照', '相册中选'],
       success: function (res) {
-        that.data.imageUrl = res.tempFilePaths;
-        if (res.tempFilePaths.length == 1) {
-          var _path = res.tempFilePaths[0];
-          that.uploadFile2Server(_path);
+        switch(res.tapIndex){
+          case 0:
+            wx.chooseImage({
+              sourceType: ['camera'],
+              sizeType: ['compressed'],
+              count: 1,
+              success: function (res) {
+                that.data.imageUrl = res.tempFilePaths;
+                if (res.tempFilePaths.length == 1) {
+                  var _path = res.tempFilePaths[0];
+                  that.uploadFile2Server(_path);
+                }
+              }
+            });
+            break;
+          case 1:
+            wx.chooseImage({
+              sourceType: ['album'],
+              sizeType: ['compressed'],
+              count: 1,
+              success: function (res) {
+                that.data.imageUrl = res.tempFilePaths;
+                if (res.tempFilePaths.length == 1) {
+                  var _path = res.tempFilePaths[0];
+                  that.uploadFile2Server(_path);
+                }
+              }
+            });
+            break;
         }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
       }
     });
+
+
+    
+    
   },
   goBondDetail:function(e){
     var _id = e.currentTarget.dataset.id;

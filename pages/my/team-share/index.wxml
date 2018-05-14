@@ -9,8 +9,11 @@
         <view class="weui-btn-area">
             <button class="weui-btn" open-type="share" type="primary">分享给好友</button>
         </view>
+        <view class="desc">
+            发送到微信群，好友通过长按识别该小程序码即可加入您创建的团队！
+        </view>
     </view>
     <view class="page__bd" wx:else>
-      <text>当前您还不属于任何团队.</text>
+      <text class="desc">当前您还不属于任何团队.</text>
     </view>
 </view>

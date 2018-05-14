@@ -132,14 +132,18 @@ App({
       var user = this.globalData.user;
       this.log("launchStartPage",user);
       if (typeof(user.user.teamId) == "undefined" || user.user.teamId === ""){
-          //引导到创建团队页面
           wx.redirectTo({
             url: '/pages/starter/starter?action=createTeam',
           })
       }else{
         wx.switchTab({
-          url: '/pages/index/index'
-        });  
+          url: '/pages/index/index',
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onShow();
+          }
+        }); 
       }
   },
   getUserInfo() {

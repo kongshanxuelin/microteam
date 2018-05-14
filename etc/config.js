@@ -17,7 +17,7 @@ export default {
   uploadPath: "https://wx.sumslack.com/microteam/upload/",
 
 
-	version:"1.3.6",
-	desc:"新增债券扫一扫"
+	version:"1.4.1",
+	desc:"Bug Fixed"
 	
 }

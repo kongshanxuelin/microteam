@@ -6,6 +6,7 @@
     "pages/dyna/publish/index",
     "pages/contact/index",
     "pages/apps/project/detail/detail",
+    "pages/apps/project/index",
     "pages/index/teamadd/teamadd",
     "pages/index/teamchange/teamchange",
     "pages/work/index",

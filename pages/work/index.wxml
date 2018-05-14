@@ -34,7 +34,7 @@
                     <view class="weui-grid__label">工作报告</view>
             </navigator>
         </view>
-
+        <!--
         <view class="weui-cells__title">监控报告</view>
         <view class="weui-grids">
             <navigator url="/pages/working/server/index" class="weui-grid" hover-class="weui-grid_active">
@@ -58,5 +58,6 @@
                     <view class="weui-grid__label">提醒设置</view>
             </navigator>        
         </view>
+        -->
     </view>
 </view>    
