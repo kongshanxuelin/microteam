@@ -20,6 +20,10 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"current": -1,
 			"list": []
@@ -32,6 +36,13 @@
 					"name": "识别小程序码",
 					"pathName": "pages/starter/starter",
 					"query": "scene=bond",
+					"scene": "1048"
+				},
+				{
+					"id": 1,
+					"name": "识别小程序码 - 颜值",
+					"pathName": "pages/starter/starter",
+					"query": "scene=ai_face_check",
 					"scene": "1048"
 				}
 			]

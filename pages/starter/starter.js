@@ -8,56 +8,63 @@ Page({
   },
   onLoad: function (option) {
     var that = this;
-    //查看用户是否有过授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          App.log("用户已授权过.")
-          that.setData({
-            isGrant: true
-          });
-        }
-      }
-    });
-    
     var _action = option.action || "";
-    App.log("microTeam", option.scene);
-    if (option.scene) {
-      var _scene = decodeURIComponent(option.scene);
-      App.log("scene:", _scene);
-      if (_scene.indexOf("s.team=") >= 0) {
-        var _shareTeamId = _scene.substring("s.team=".length, _scene.length);
-        App.log("share teamid:", _shareTeamId);
-
-        App.WxService.navigateTo('/pages/my/team-share-confirm/index?teamid=' + _shareTeamId);
-        
-        App.HttpServiceWork.teamShare({ token: App.getToken(), id: _shareTeamId })
-        .then(json => {
-          if(json.ret){
-            App.alert("成功加入团队!");
-          }else{
-            App.alert(json.msg || "操作失败!");
-          }
-          setTimeout(function(){
-             that.doRelauch();
-          },1500);
-        });
-        
-      } else if (_scene == 'bond') {
+    var _scene = decodeURIComponent(option.scene||"");
+    console.log("_scene:" + _scene);
+    if (_scene == 'bond') {
+        App.log("microTeam", _scene);
         App.WxService.navigateTo("/pages/bond/index");
-      }
+    }else if (_scene.indexOf('ai')==0) {
+      _scene = _scene.substring(3, _scene.length);
+      App.WxService.navigateTo("/pages/ai/ocr/index?id=" + _scene);
     }else{
-      if (_action === "createTeam") {
-        this.setData({
-          isHaveTeam: false
+        //查看用户是否有过授权
+        wx.getSetting({
+          success: function (res) {
+            if (res.authSetting['scope.userInfo']) {
+              App.log("用户已授权过.")
+              that.setData({
+                isGrant: true
+              });
+            }
+          }
         });
-      }
-    }
+        
+        if (option.scene) {
+          var _scene = decodeURIComponent(option.scene);
+          App.log("scene:", _scene);
+          if (_scene.indexOf("s.team=") >= 0) {
+            var _shareTeamId = _scene.substring("s.team=".length, _scene.length);
+            App.log("share teamid:", _shareTeamId);
 
-    if (App.globalData.networkType === "none"){
-      this.setData({
-        btn:"离线浏览"
-      })
+            App.WxService.navigateTo('/pages/my/team-share-confirm/index?teamid=' + _shareTeamId);
+            
+            App.HttpServiceWork.teamShare({ token: App.getToken(), id: _shareTeamId })
+            .then(json => {
+              if(json.ret){
+                App.alert("成功加入团队!");
+              }else{
+                App.alert(json.msg || "操作失败!");
+              }
+              setTimeout(function(){
+                that.doRelauch();
+              },1500);
+            });
+            
+          } 
+        }else{
+          if (_action === "createTeam") {
+            this.setData({
+              isHaveTeam: false
+            });
+          }
+        }
+
+        if (App.globalData.networkType === "none"){
+          this.setData({
+            btn:"离线浏览"
+          })
+        }
     }
   },
   doRelauch:function(){

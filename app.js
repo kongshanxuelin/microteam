@@ -12,6 +12,8 @@ App({
     if (options.query.scene && options.query.scene!=""){
       this.log("app launch:", decodeURIComponent(options.query.scene));
       this.globalData.scene = decodeURIComponent(options.query.scene);
+      //如果是通过识别小程序码进来的
+      if (this.globalData.scene!="") return;
     }
     var that = this;    
     wx.getNetworkType({
@@ -27,10 +29,11 @@ App({
         that.globalData.networkType = res.networkType;
       });
     }
-    //设置用户信息全局变量
+    /*设置用户信息全局变量
     this.getUserInfo().then(data=>{
       //that.log("global userinfo:", that.globalData.userInfo);
     });
+    */
 
     /*
     *登录步骤：

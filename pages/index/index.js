@@ -31,6 +31,10 @@ Page({
         {
           label: '债券扫一扫',
           icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABy0lEQVRoQ+1Z3W3CMBA+S/idEYiU82sZoUzQjgATlBHoBG03oBvABKUTlGcfUtiA9j3SVa5SRCGJnObHSfA9n++++z5bujsL6LiJjuOHzAKiKBrFcXwDAGOXRTLzJwC8K6W2aThSC9Baj4UQbwAwdAn+NDczL5VSs3M8qQUQ0QEABDPPhRD7FhQxB4A7Zp4ppZaneC4KSNj/EEK8hGFoDjq3KIqGcRwfmPlVKTXNLYCIbgHAXJ9HRFw4R58AICI2bwERDb6jXSjgC6hJMq9ATcRah/UKWFNVk6NXoCZircN6BaypqsnxehQwBBLRipkXWT14TSTnht3tds8AsAnDcJXbC7kAVyZnf0fKMqw0ebY/CvxOYk2yVyLXBhEn5vxRgWQLYV56awb5nAJXiGiwZq9VSrDT6NH+vIFGaaswWT8V0Fo/SCnXQRC0Yan1o5fBlLZi7NpaZY2I934vVOEbtA51PfOAXy1aX4pijv4KFeOrem+vQPWcFovoFSjGV/Xe1gokeyFm5q2UchIEgfmndWpEZD4bn9L+7VLbabNEYmbT/bXJvgaDweic0Mx5QGs9FUL8+dJ0VQ0z76WUi7T2vp8DjSum/5O38wp8A3KpZUC+fbh0AAAAAElFTkSuQmCC",
+        },
+        {
+          label: '团队动态',
+          icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEqUlEQVRoQ+2Z4XHUQAyFpQqgA0gFhAogFQAVQCoAKiBUQKiApAKSCkgqgFRAUgGkAjHfjeTZ0629a9/dD2ayM5kLnGO/Jz09adcq//nS/xy/PBCIDJrZoYi8EpGn/sO/H/v3tyLCz18RuRKRa1X9tYvsb5UBMwPsexF57aDnYILMmYh8VVXILVqLCDjwTyLybuSpdx7x8mvIPhm5/kJEPi4hMpuAmQH8JAEBMCAuVBWJjC4ze+kZI2uZ0Imqfp6Tim4CZoaef4gI2o51DZkW6DFAToZgvCiuoTaOVBWJNVcXAS9QwEdREnGAo+Gtl5khRYhERgAPiWahNwlUwN+IyMveCPWy8wwjw8hGF4lJAl6sP4vIn6vqWOH2Yp28zszI6lu/CBLPp4q7RQDwofm9gw9micSVqh6NsR4lYGZoEsdh3ahqWbw7iTY3cenQS3Cnz2EIZoabhZz4/+x8KwxVAi6d346Sgj3cg+bpC7mX0KEhEsQo4ijsg5qUxgh8d6/mXse7chsHBsDo3jmTa5F2d/rmF1UlvEEgRX+IyLaacTAU5yrClXXPOJIznaS0kYUagVOPEM/Aiyc76xQx1zcDHvpFMuWiCTIDheMwE33I9/NmRw9ibVxTI/DHbfNOVfNDuxJRFCaAovnF356LyClNqhXd+AMzgyi1cKuqByWINQLetLDOKtsW+okhD3ng7wBfTZ4pspMWbWalKugLQ4fOBIjYFwc6Sz6VpsdtcLAAvjbbmBldF3mx1kA1ZLRW6JnAcFNVbY4Z5YNS85mclZYYhZmZP28tW5lANI9Z+nfNUzurqLdqJ5HtynRRB2vOmAlEAc+yz9S1h77hNSWlZueSLQp56MylOjKBSNNcAuj7URn9ZAiDf4+R7TCI/RBI3XIosERgVaQefUYUrLUptVRjeyMQHr3RSbOExsi2ou+2GwTuVXXoLWNFvNEwag8xM/a1zE1dfaMoxOrYMEXEzMgcjXWyiIfNRI+N9nRSlw3jAj0mOnt1bGgQiPq8VFUCt1o5A+UeYNLeWp3UvT6Al+ME0Wc87z4LSvXE8QuduUqATUvXKJG8fOikjXGCB5/NAe/67xsl/OLRwanwZKQQG56VJj0jbFDyuExXDuBdRyWVUSL0v+Fci8bpFH3qBkIZOKcXDG9bHb20pNra0GxsqJOX1+puq8OuSvTZC0Rw2huaiubWtpSpk5bPY87nsKu7OFv+n2y6b0vpBHANgDAe8EmRrvSbrBNHWVSYHeDBgKGE9fZv6h1oaamDlIrzTEZvHGVRYXYQKKUz71ilcJvybAawx60H7+J7M+MkIk4AJ8+kWidzpBESzxzY3kkk8M2m19x1eReEBPXA4vc3u5aOuxtzVTgO4DlEnjyhbhLweqBDo/k4JaOwcRycZ+tlZowc5dFLF/iNWWgKSeX4O7IxnGfOZTLSvWcd33dloAQ20gfICBnCqydT7pIk4rUXg6NuMxac2QRcUngzKY9TtXz/8rUq32EG8fq1huWScXtJE1xEoLDZIEI0o8h7lYTOydpW3XsrAklaFDpE4gU3n0EKsEiLpscnbzOb7796IrEzAj0P28c1DwT2EdU59/wHhJ+PT7j4Q2sAAAAASUVORK5CYII=",
         }
       ],
       buttonClicked(index, item) {
@@ -38,6 +42,8 @@ Page({
           App.WxService.navigateTo('/pages/bond/index');
         } else if (index == 0) {
           App.WxService.navigateTo('/pages/contact/index');
+        } else if (index == 2) {
+          App.WxService.navigateTo('/pages/dyna/index');
         }
         return true
       }

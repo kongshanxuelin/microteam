@@ -1,146 +1,36 @@
+//index.js
+
+// 获取显示区域长宽
+const device = wx.getSystemInfoSync()
+const W = device.windowWidth
+const H = device.windowHeight - 50
+
+let cropper = require('../../welCropper/welCropper.js');
 
 const App = getApp();
-Page({
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
-    imageUrl:"http://h5.sumslack.com/bond_d.jpg",
+    height: H - 250,
     bonds: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+  onLoad: function () {
+    var that = this
+    // 初始化组件数据和绑定事件
+    cropper.init.apply(that, [W, H]);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  shareQrCode:function(){
+  shareQrCode: function () {
     var imageurl = App.Config.workPath + "r/wx/service/qrcode?path=bond";
-    console.log("imageurl:",imageurl);
-    this.setData({
-      imageUrl: imageurl
-    });
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-  
-  clickImage:function(e){
-      // var zuobiao = e.detail;
-      // this.getBondIndex(zuobiao);
-    var src = e.target.dataset.src;
+    console.log("imageurl:", imageurl);
     wx.previewImage({
-      current: src,
-      urls: [src]
-    });
+      current: imageurl,
+      urls: [imageurl]
+    })
   },
-
-  getBondIndex:function(zuobiao){
-    
-    
-    var x = zuobiao.x - 5;
-    var y = zuobiao.y - 5;
-    console.log(zuobiao);
-    for(var i=0;i<json.length;i++){
-      var location = json[i].location;
-      if(this.isInRect(x,y,location)){
-        console.log("selected:"+i);
-        wx.showToast({
-          title: JSON.stringify(json[i].bonds),
-          icon: 'success',
-          duration: 10000
-        });
-      }
-    } 
-  },
-
-  isInRect:function(x,y,rect){
-    return x>=rect.left && x<=(rect.left+rect.width)
-      && y>=rect.top && y<=(rect.top+rect.height);
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
-  addFileFromCamera: function () {
-    var that = this;
-    wx.showActionSheet({
-      itemList: ['拍照', '相册中选'],
-      success: function (res) {
-        switch(res.tapIndex){
-          case 0:
-            wx.chooseImage({
-              sourceType: ['camera'],
-              sizeType: ['compressed'],
-              count: 1,
-              success: function (res) {
-                that.data.imageUrl = res.tempFilePaths;
-                if (res.tempFilePaths.length == 1) {
-                  var _path = res.tempFilePaths[0];
-                  that.uploadFile2Server(_path);
-                }
-              }
-            });
-            break;
-          case 1:
-            wx.chooseImage({
-              sourceType: ['album'],
-              sizeType: ['compressed'],
-              count: 1,
-              success: function (res) {
-                that.data.imageUrl = res.tempFilePaths;
-                if (res.tempFilePaths.length == 1) {
-                  var _path = res.tempFilePaths[0];
-                  that.uploadFile2Server(_path);
-                }
-              }
-            });
-            break;
-        }
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
-    });
-
-
-    
-    
-  },
-  goBondDetail:function(e){
+  goBondDetail: function (e) {
     var _id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/paper/index?type=bond&id='+_id
+      url: '/pages/paper/index?type=bond&id=' + _id
     })
   },
   uploadFile2Server: function (_path) {
@@ -152,7 +42,7 @@ Page({
     App.WxService.uploadFile({
       url: App.Config.workPath + 'wx/upload',
       filePath: _path,
-      formData:{
+      formData: {
         type: 'ocrtype',
       },
       name: 'file'
@@ -177,8 +67,55 @@ Page({
         });
 
         wx.hideLoading();
+        that.hideCropper();
 
       }
     });
+  },
+  clickImage: function (e) {
+    var src = e.target.dataset.src;
+    wx.previewImage({
+      current: src,
+      urls: [src]
+    });
+  },
+  selectTap(e) {
+    let that = this
+    let mode = e.currentTarget.dataset.mode
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success(res) {
+        const tempFilePath = res.tempFilePaths[0]
+        console.log(tempFilePath)
+
+        // 将选取图片传入cropper，并显示cropper
+        // mode=rectangle 返回图片path
+        // mode=quadrangle 返回4个点的坐标，并不返回图片。这个模式需要配合后台使用，用于perspective correction
+        // let modes = ["rectangle", "quadrangle"]
+        // let mode = modes[1]   //rectangle, quadrangle
+        that.showCropper({
+          src: tempFilePath,
+          mode: mode,
+          sizeType: ['original'],   //'original'(default) | 'compressed'
+          callback: (res) => {
+            if (mode == 'rectangle') {
+              console.log("crop callback:" + res);
+              
+              // wx.previewImage({
+              //   current: res,
+              //   urls: [res]
+              // });
+
+              that.uploadFile2Server(res);
+            }
+           
+
+            // that.hideCropper() //隐藏，我在项目里是点击完成就上传，所以如果回调是上传，那么隐藏掉就行了，不用previewImage
+          }
+        })
+      }
+    })
   }
 })

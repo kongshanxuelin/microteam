@@ -1,0 +1,28 @@
+.section__title {
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:25px;
+  margin-right:25px;
+}
+.text-desc {
+  font-size:14px;
+  color:darkcyan;
+
+  width:750px;
+}
+.result {
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:25px;
+  margin-right:25px;
+}
+.text-result {
+  font-size:14px;
+  color:olivedrab;
+
+  width:750px;
+}
+.img {
+  width: 100%;
+  text-align: center;
+}

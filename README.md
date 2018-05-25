@@ -30,3 +30,12 @@
 <img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' />
 
 
+#V1.5.0
+- 整合了Tentcent AI API，增加了一些好玩的小功能；
+
+#1.4.5
+- 新增债券智能识别；
+
+#1.4.4
+- Bug Fixed
+- 去掉了没用的功能；

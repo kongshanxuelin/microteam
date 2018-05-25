@@ -1,0 +1,15 @@
+<view class="page__bd">
+  <view class="section__title">
+    <text class="text-desc">{{desc}}</text>
+  </view>
+
+  <image class="img" mode="scaleToFill" bindtap='clickImage' data-src='{{imgurl}}' src="{{imgurl}}" src="{{imgurl}}" />
+  <view class="result">
+    <text class="text-result">{{result}}</text>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap='selectTap' data-mode='rectangle'>拍照选取</button>
+    <button class="weui-btn" open-type="share" type="warn" plain="true">分享给好友</button>
+    <button class="weui-btn" bindtap='shareQrCode' type="warn" plain="true">小程序码分享</button>
+  </view>
+</view>

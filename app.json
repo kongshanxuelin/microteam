@@ -2,6 +2,7 @@
   "pages": [
     "pages/starter/starter",
     "pages/index/index",
+    "pages/ai/index",
     "pages/dyna/index",
     "pages/dyna/publish/index",
     "pages/contact/index",
@@ -33,7 +34,8 @@
     "pages/working/process/mylist/index",
     "pages/paper/index",
     "pages/paper/share/index",
-    "pages/bond/index"
+    "pages/bond/index",
+    "pages/ai/ocr/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -55,10 +57,10 @@
         "text": "小团队"
       },
       {
-        "pagePath": "pages/dyna/index",
+        "pagePath": "pages/ai/index",
         "iconPath": "images/dyna.png",
         "selectedIconPath": "images/dyna-active.png",
-        "text": "动态"
+        "text": "发现"
       },
       {
         "pagePath": "pages/working/index",

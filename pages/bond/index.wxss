@@ -1,3 +1,5 @@
+/**index.wxss**/
+@import "/welCropper/welCropper.wxss";
 .img {
   width: 100%;
   text-align: center;
@@ -6,7 +8,7 @@
   margin: 5px;
 }
 .page__bd {
-  margin:0;
+  margin:20px;
 }
 .section__title {
   color:grey;
