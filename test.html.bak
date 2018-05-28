@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <div style="text-align:center;font-family: 'MicrosoftYaHei';font-size:18px;margin-bottom:20px;margin-top:20px;color:#000000"><b>年龄检测</b></div>
+  <table width="100%" style='background-color:#FAFAFA'>
+	<tr>
+		<td>
+			<div style='margin:20px;'>
+				
+				<div style='font-size:14px;margin-bottom:10px;color:#ff66ff'>不带眼镜的您显得更有魅力，多多微笑有利于身心健康，颜值年龄： <b>26</b>，颜值： 81，颜值逆天，您的颜值战胜了全球：  <b>81%</b> 的<b>女性</b>~</div>
+			</div>
+		</td>
+		<td align='right' valign='top' style='margin-top:20px;'>
+			<img width=80 height=80 style='border-radius:10%' src='http://192.168.1.154:6080/upload/2018/05/28/qqgawxaqyo_s.jpg'>
+			</td>
+	</tr></table>
+	<table width="100%"><tr>
+		<td align='center' valign='center'>
+		  <img width=180 height=180 src='http://192.168.1.154:6080/r/wx/service/qrcode?path=ai_face_check'>
+			</td>
+		<td align='center' valign='center'>
+			<div style='margin-left:10px' style='color:#000;margin-top:30px;'>
+			<div style='font-size:14px;margin-bottom:10px'>保存分享发送给好友</div>
+			<div style='font-size:14px;margin-bottom:10px'>长按识别二维码使用</div>
+			<div style='font-size:12px;color:gray'>由小团队管理小程序生成</div>
+			</div>
+		</td>
+	</tr>
+  </table>
+ </body>
+</html>

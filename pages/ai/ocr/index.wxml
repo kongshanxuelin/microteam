@@ -8,8 +8,13 @@
     <text class="text-result">{{result}}</text>
   </view>
   <view class="weui-btn-area">
+   <picker bindchange="bindPickerChange" value="{{index}}" range-key="label" range="{{list}}">
+    <view class="picker text-desc">
+      请选择{{selectTip}}：{{list[index].label}}
+    </view>
+  </picker>
+
     <button class="weui-btn" type="primary" bindtap='selectTap' data-mode='rectangle'>拍照选取</button>
-    <button class="weui-btn" open-type="share" type="warn" plain="true">分享给好友</button>
-    <button class="weui-btn" bindtap='shareQrCode' type="warn" plain="true">小程序码分享</button>
+    <button class="weui-btn" bindtap='shareQrCode' type="warn" plain="true">分享给朋友</button>
   </view>
 </view>

@@ -57,7 +57,7 @@
         "text": "小团队"
       },
       {
-        "pagePath": "pages/ai/index",
+        "pagePath": "pages/dyna/index",
         "iconPath": "images/dyna.png",
         "selectedIconPath": "images/dyna-active.png",
         "text": "发现"

@@ -17,7 +17,7 @@ export default {
   uploadPath: "https://wx.sumslack.com/microteam/upload/",
 
 
-	version:"1.5.0",
-	desc:"增加一些团队趣味性的小功能"
+	version:"1.5.3",
+	desc:"Bug Fixed"
 	
 }

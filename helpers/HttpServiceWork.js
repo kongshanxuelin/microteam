@@ -86,6 +86,8 @@ class Service extends ServiceBase {
       sumslackBind:'r/wx/service/bindSumslack',
       sumslackCheck: 'r/wx/service/bindSumslackCheck',
       
+      //AI下拉框
+      aiList:'r/wx/service/ai_thing',
       //首页
       myHome: 'r/wx/service/myHome'
 			
@@ -263,6 +265,10 @@ class Service extends ServiceBase {
   sumslackBind(params) {
     return this.getRequest(this.$$path.sumslackBind, params)
   }	
+  aiList(params) {
+    return this.getRequest(this.$$path.aiList, params)
+  }	
+  
   sumslackCheck(params) {
     return this.getRequest(this.$$path.sumslackCheck, params)
   }	

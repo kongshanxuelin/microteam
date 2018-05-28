@@ -16,7 +16,7 @@ Page({
       { id: "face_check",label: "年龄测算", icon: "./img/age.png" },
       //{ id: "ocr_pic_scene",label: "场景检测", icon: "./img/car.png" },
       //{ id: "ocr_isfood",label: "美食识别", icon: "./img/car.png" },
-      //{ id: "ocr_pic_thing",label: "物体识别", icon: "./img/car.png" }
+      { id: "ocr_pic_thing",label: "物件识别", icon: "./img/thing.png" }
     ]
   },
 
