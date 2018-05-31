@@ -65,6 +65,7 @@ Page({
   },
   clickImage: function (e) {
     var src = e.target.dataset.src;
+    if (src == "" || src.length < 1) return;
     wx.previewImage({
       current: src,
       urls: [src]

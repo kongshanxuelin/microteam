@@ -9,7 +9,7 @@
   </view>
   <view class="weui-btn-area">
    <picker bindchange="bindPickerChange" value="{{index}}" range-key="label" range="{{list}}">
-    <view class="picker text-desc">
+    <view class="picker text-desc" wx:if="{{list.length>0}}">
       请选择{{selectTip}}：{{list[index].label}}
     </view>
   </picker>
