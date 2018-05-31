@@ -27,8 +27,10 @@
 
 效果图：
 
-<img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' />
+<img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/ai.jpg' alt='preview' />
 
+#V1.5.3
+- 新增人脸融合等功能；
 
 #V1.5.0
 - 整合了Tentcent AI API，增加了一些好玩的小功能；
