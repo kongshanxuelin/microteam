@@ -14,9 +14,11 @@ Page({
     icon: '../../images/home.png',
     taskIcon:'../../images/working/task.png',
     processIcon:'../../images/working/process.png',
+    actIcon: '../../images/working/anno.png',
     team:{},
     anno:{},
     task:{},
+    actlist:{},
     process:{num:0,pro:{}}
   },
   initButton(position = 'bottomRight') {
@@ -54,19 +56,21 @@ Page({
     this.initButton();
     var that = this;
     var _team = App.getCurrentTeam();
-    console.log("index:",_team);
     if(_team!=null){
       this.setData({
         team:_team
       });
     }
   },
+  goActCreate:function(){
+    App.WxService.navigateTo('/pages/paper/index?type=actCreate');
+  },
   getHomeData:function(cb){
     var that = this;
+    
     App.HttpServiceWork.myHome({
       "token": App.getToken(),
     }).then(json => {
-      App.log(json);
       if (json.anno) {
         that.setData({
           anno: json.anno
@@ -82,6 +86,16 @@ Page({
           process: { num: json.processList.length, pro: json.processList[0]}
         })
       }
+      
+      //获取我的活动和我能参加的活动
+      App.HttpServiceWork.myact({
+        "token": App.getToken(),
+      }).then(json => {
+        that.setData({
+          actlist: json
+        })
+      });
+
       if(typeof cb === "function"){
         cb();
       }
@@ -92,8 +106,44 @@ Page({
       wx.stopPullDownRefresh;
     });
   },
+  joinAct: function (e) {
+    var that = this;
+    var act = e.currentTarget.dataset.act;
+    var _s = App.Tools.formatDate(new Date(act.cur_start_date), "yyyy-MM-dd");
+    var _e = App.Tools.formatDate(new Date(act.cur_end_date), "yyyy-MM-dd");
+    var _freqNum = act.freq_num;
+    var _freqUnit = act.freq_unit;
+    var str = "是否参加" + _s + "~" + _e + "的" + (_freqUnit == "m" ? "本月" : "本周") + (_freqNum == 0 ? "日" : _freqNum) + (_freqUnit == "m" ? "日" : "") + " 的"+act.title+"的活动？"
+    App.confirm(str,function(){
+      App.HttpServiceWork.actJoin({
+          "token": App.getToken(),
+          "actId": act.id
+        }).then(json => {
+          if (json.ret) {
+            wx.showToast({
+              title: '参与活动成功！',
+            })
+            that.onPullDownRefresh();
+          } else {
+            wx.showToast({
+              title: '参与活动失败！',
+            })
+          }
+        });
+    });
+    
+  },
+  joinActDetail:function(e){
+    var that = this;
+    var act = e.currentTarget.dataset.act;
+    var _s = App.Tools.formatDate(new Date(act.cur_start_date), "yyyy-MM-dd");
+    var _e = App.Tools.formatDate(new Date(act.cur_end_date), "yyyy-MM-dd");
+    var _freqNum = act.freq_num;
+    var _freqUnit = act.freq_unit;
+    var str = "活动与" + (_freqUnit == "m" ? "本月" : "本周") + (_freqNum == 0 ? "日" : _freqNum) + (_freqUnit == "m" ? "日" : "") + " 举行，目前已完成报名人数： " + act.rep_num + " / " + act.min_num;
+    App.alert(str);
+  },
   onShow:function(){
-    console.log("index onShow");
     var _cache  = App.getCache("user");
     if(typeof _cache === "object"){
       this.setData({
@@ -101,6 +151,11 @@ Page({
       });
     }
     var _team = App.getCurrentTeam();
+    if(_team == null){
+      console.log("team is null,token=", App.getToken())
+      App.calUserFromServer();
+      return;
+    }
     wx.setNavigationBarTitle({
       title: '小团队' + ' - ' + _team.teamName
     });

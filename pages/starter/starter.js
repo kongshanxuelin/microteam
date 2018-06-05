@@ -26,6 +26,9 @@ Page({
               that.setData({
                 isGrant: true
               });
+              wx.reLaunch({
+                url: '/pages/index/index'
+              });
             }
           }
         });
@@ -65,6 +68,8 @@ Page({
             btn:"离线浏览"
           })
         }
+
+        
     }
   },
   doRelauch:function(){

@@ -74,7 +74,6 @@ App({
     that.HttpService.checkLogin({ token: that.getToken() }).then(
       data => {
         if (!data.res) {
-          that.log("token expriend.");
           that.login();
         }
         if (data.user && that.globalData.user.user) {
@@ -233,8 +232,11 @@ App({
       return _token;
   },
   getCurrentTeam(){
+    if (typeof this.globalData.user == "undefined"){
+      return null;
+    }
     var _user = this.globalData.user.user;
-    if (typeof _user === "undefined") {
+    if ( typeof _user === "undefined") {
       _user = this.getCache("user").user;
     }
     if (_user.teamId && _user.teamId!="") {

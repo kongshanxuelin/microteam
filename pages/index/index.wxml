@@ -56,6 +56,32 @@
                   </view>
                 </view>
             </navigator>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{actIcon}}" class="item-image"></image>
+                    <view class="weui-badge" wx:if="{{actlist.joined.length>0}}"
+                    style="position: absolute;top: 8px;left: 45px;">
+                    {{actlist.joined.length}}
+                    </view>
+                </view>
+                <view class="weui-cell__bd marginleftspace weui-cell__ft_in-access">
+                  <view class="weui-flex flex-column">
+                    <view class="item-title">团队活动</view>
+                    <view class="item-desc" wx:if="{{actlist.canjoin.length>0 || actlist.joined.length>0}}">
+                    <block wx:if="{{actlist.canjoin.length>0}}">
+                      <button class="weui-btn mini-btn" type="default" size="mini" bindtap="joinAct" data-act="{{item}}"  wx:for="{{actlist.canjoin}}">参加 {{item.title}} 活动</button>
+                    </block>
+                    <block wx:if="{{actlist.joined.length>0}}">
+                    <div class="weui-btn mini-btn" bindtap='joinActDetail' data-act="{{item}}"  wx:for="{{actlist.joined}}">已参加 {{item.title}} 活动,报名已完成： {{item.num_percent}} </div>
+                    <text>提前1天邮件通知您活动是否成行</text>  
+                    </block>
+                    </view>
+                    <view class="item-desc" wx:else>
+                      <text class="act-create" bindtap='goActCreate'>点击这里创建一个团队活动</text>
+                    </view>
+                  </view>
+                </view>
+            </view>
         </view>
     </view>
     <view class="page__ft">

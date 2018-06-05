@@ -20,6 +20,14 @@ Page({
         this.setData({
           path: App.Config.domain + "bond/" + id
         });
+      }else if (typeof (t) != "undefined" && t === "actCreate") {
+        this.setData({
+          path: App.Config.domain + "act/create/" + token
+        });
+      } else if (typeof (t) != "undefined" && t === "actList") {
+        this.setData({
+          path: App.Config.domain + "act/list/" + token
+        });
       }else{
         if(typeof(t)!="undefined" && id!=""){
           this.setData({
