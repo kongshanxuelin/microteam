@@ -29,6 +29,9 @@
 
 <img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/ai.jpg' alt='preview' />
 
+#V1.6.0
+- 新增活动管理，方便组织团队活动；
+
 #V1.5.3
 - 新增人脸融合等功能；
 
