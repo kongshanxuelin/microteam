@@ -107,8 +107,9 @@ Page({
     });
   },
   joinAct: function (e) {
+    var _formId = e.detail.formId;   
     var that = this;
-    var act = e.currentTarget.dataset.act;
+    var act = e.detail.target.dataset.act;
     var _s = App.Tools.formatDate(new Date(act.cur_start_date), "yyyy-MM-dd");
     var _e = App.Tools.formatDate(new Date(act.cur_end_date), "yyyy-MM-dd");
     var _freqNum = act.freq_num;
@@ -117,7 +118,8 @@ Page({
     App.confirm(str,function(){
       App.HttpServiceWork.actJoin({
           "token": App.getToken(),
-          "actId": act.id
+          "actId": act.id,
+          "formId": _formId
         }).then(json => {
           if (json.ret) {
             wx.showToast({
@@ -136,12 +138,13 @@ Page({
   joinActDetail:function(e){
     var that = this;
     var act = e.currentTarget.dataset.act;
-    var _s = App.Tools.formatDate(new Date(act.cur_start_date), "yyyy-MM-dd");
-    var _e = App.Tools.formatDate(new Date(act.cur_end_date), "yyyy-MM-dd");
-    var _freqNum = act.freq_num;
-    var _freqUnit = act.freq_unit;
-    var str = "活动与" + (_freqUnit == "m" ? "本月" : "本周") + (_freqNum == 0 ? "日" : _freqNum) + (_freqUnit == "m" ? "日" : "") + " 举行，目前已完成报名人数： " + act.rep_num + " / " + act.min_num;
-    App.alert(str);
+    // var _s = App.Tools.formatDate(new Date(act.cur_start_date), "yyyy-MM-dd");
+    // var _e = App.Tools.formatDate(new Date(act.cur_end_date), "yyyy-MM-dd");
+    // var _freqNum = act.freq_num;
+    // var _freqUnit = act.freq_unit;
+    // var str = "活动与" + (_freqUnit == "m" ? "本月" : "本周") + (_freqNum == 0 ? "日" : _freqNum) + (_freqUnit == "m" ? "日" : "") + " 举行，目前已完成报名人数： " + act.rep_num + " / " + act.min_num;
+    // App.alert(str);
+    App.WxService.navigateTo('/pages/paper/index?type=actDetail&id='+act.id);
   },
   onShow:function(){
     var _cache  = App.getCache("user");

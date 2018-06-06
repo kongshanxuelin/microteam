@@ -94,3 +94,6 @@
 .act-create {
   color:orangered;
 }
+.text-tip {
+  color:orangered;
+}

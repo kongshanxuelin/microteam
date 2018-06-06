@@ -68,12 +68,13 @@
                   <view class="weui-flex flex-column">
                     <view class="item-title">团队活动</view>
                     <view class="item-desc" wx:if="{{actlist.canjoin.length>0 || actlist.joined.length>0}}">
-                    <block wx:if="{{actlist.canjoin.length>0}}">
-                      <button class="weui-btn mini-btn" type="default" size="mini" bindtap="joinAct" data-act="{{item}}"  wx:for="{{actlist.canjoin}}">参加 {{item.title}} 活动</button>
-                    </block>
+                    <form report-submit="true" bindsubmit="joinAct" wx:for="{{actlist.canjoin}}" wx:if="{{actlist.canjoin.length>0}}">
+
+                      <button formType="submit" class="weui-btn mini-btn" type="default" size="mini" data-act="{{item}}">参加 {{ (item.freq_unit=='w'?'本周':(item.freq_unit=='2w'?'两周的':(item.freq_unit=='m'?'本月':''))) + ' ' + item.title}} 活动</button>
+                    </form>
                     <block wx:if="{{actlist.joined.length>0}}">
-                    <div class="weui-btn mini-btn" bindtap='joinActDetail' data-act="{{item}}"  wx:for="{{actlist.joined}}">已参加 {{item.title}} 活动,报名已完成： {{item.num_percent}} </div>
-                    <text>提前1天邮件通知您活动是否成行</text>  
+                    <view bindtap='joinActDetail' data-act="{{item}}"  wx:for="{{actlist.joined}}">已参加 {{item.title}} 活动,报名已完成： {{item.num_percent}} </view>
+                    <text class="text-tip">活动生效时会用微信第一时间通知您.</text>  
                     </block>
                     </view>
                     <view class="item-desc" wx:else>

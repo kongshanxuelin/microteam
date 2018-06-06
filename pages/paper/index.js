@@ -24,6 +24,10 @@ Page({
         this.setData({
           path: App.Config.domain + "act/create/" + token
         });
+      } else if (typeof (t) != "undefined" && t === "actDetail") {
+        this.setData({
+          path: App.Config.domain + "act/detail/" + id + "," + token
+        });
       } else if (typeof (t) != "undefined" && t === "actList") {
         this.setData({
           path: App.Config.domain + "act/list/" + token

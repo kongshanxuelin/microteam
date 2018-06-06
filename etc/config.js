@@ -2,8 +2,8 @@ export default {
 	/* dev 	 
 	workPath	:	'http://192.168.1.154:6080/',
   basePath:   'http://192.168.1.154:6080/r/',
-  uploadPath: "http://192.168.1.154:6080/upload/",
   domain: 'http://192.168.1.154:8080/',
+  uploadPath: "http://192.168.1.154:6080/upload/",
  */
 
 	
@@ -18,7 +18,7 @@ export default {
   uploadPath: "https://wx.sumslack.com/microteam/upload/",
 
 
-	version:"1.6.0",
+	version:"1.6.1",
 	desc:"Bug Fixed"
 	
 }
