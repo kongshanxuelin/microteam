@@ -32,6 +32,18 @@ Page({
         this.setData({
           path: App.Config.domain + "act/list/" + token
         });
+      } else if (typeof (t) != "undefined" && t === "actSetSignin") {
+        this.setData({
+          path: App.Config.domain + "act/settings/signin/" + token
+        });
+      } else if (typeof (t) != "undefined" && t === "actSetTmpl") {
+        this.setData({
+          path: App.Config.domain + "act/settings/tmpl/" + token
+        });
+      } else if (typeof (t) != "undefined" && t === "actSetProcess") {
+        this.setData({
+          path: App.Config.domain + "act/settings/process/" + token
+        });
       }else{
         if(typeof(t)!="undefined" && id!=""){
           this.setData({

@@ -26,9 +26,15 @@ Page({
               that.setData({
                 isGrant: true
               });
+
+              if (App.globalData.shareTeamId!=""){
+                App.log("加入团队确认：", App.globalData.shareTeamId);
+              }
+              /*
               wx.reLaunch({
                 url: '/pages/index/index'
               });
+              */
             }
           }
         });
@@ -39,21 +45,25 @@ Page({
           if (_scene.indexOf("s.team=") >= 0) {
             var _shareTeamId = _scene.substring("s.team=".length, _scene.length);
             App.log("share teamid:", _shareTeamId);
+            App.globalData.shareTeamId = _shareTeamId;
 
             App.WxService.navigateTo('/pages/my/team-share-confirm/index?teamid=' + _shareTeamId);
-            
-            App.HttpServiceWork.teamShare({ token: App.getToken(), id: _shareTeamId })
-            .then(json => {
-              if(json.ret){
-                App.alert("成功加入团队!");
-              }else{
-                App.alert(json.msg || "操作失败!");
-              }
-              setTimeout(function(){
-                that.doRelauch();
-              },1500);
-            });
-            
+            /*
+            后续的微信版本已经不支持直接获取用户信息
+            if (App.getToken()){
+              App.HttpServiceWork.teamShare({ token: App.getToken(), id: _shareTeamId })
+              .then(json => {
+                if(json.ret){
+                  App.alert("成功加入团队!");
+                }else{
+                  App.alert(json.msg || "操作失败!");
+                }
+                setTimeout(function(){
+                  that.doRelauch();
+                },1500);
+              });
+            }
+            */
           } 
         }else{
           if (_action === "createTeam") {

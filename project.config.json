@@ -42,7 +42,7 @@
 					"id": 1,
 					"name": "识别小程序码 - 颜值",
 					"pathName": "pages/starter/starter",
-					"query": "scene=ai_face_check",
+					"query": "scene=s.team%3Dqvlypvofls",
 					"scene": "1048"
 				}
 			]

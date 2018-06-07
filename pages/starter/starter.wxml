@@ -1,7 +1,9 @@
 <view class="page">
     <view class="page__bd" wx:if="{{!isGrant}}">
-      <text class="info">使用小团队，须先授权登录，点击以下按钮继续：</text>
-      <open-data type="userAvatarUrl"></open-data>
+      <text class="info">使用小团队须先授权登录，点击按钮后允许：</text>
+      <view class="img"> 
+        <open-data  type="userAvatarUrl"></open-data>
+      </view>
       <open-data type="userNickName"></open-data>
       <block wx:if="{{canIUse}}">
       <button class="btnok" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>

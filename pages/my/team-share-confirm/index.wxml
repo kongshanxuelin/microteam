@@ -11,7 +11,7 @@
             </view>
 
             <view class="weui-btn-area">
-              <button class="weui-btn" type="primary" bindtap="addTeamConfirm">确认加入</button>
+              <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="addTeamConfirm">确认加入</button>
             </view>
 
             <view class="weui-msg__extra-area">

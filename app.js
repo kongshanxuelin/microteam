@@ -218,6 +218,7 @@ App({
   globalData:{
     userInfo:null,
     ws:null,
+    shareTeamId:"", //团队分享进来的小程序
     scene:"" //进入应用的场景
   },
   getToken(){
@@ -226,8 +227,10 @@ App({
         _token = this.globalData.user.token;
       }
       if (typeof _token === "undefined" || _token === ""){
-        _token = this.getCache("user").token;
-        this.globalData.user.token = _token;
+        if (this.getCache("user"))
+          _token = this.getCache("user").token;
+        if (this.globalData.user)
+          this.globalData.user.token = _token;
       }
       return _token;
   },

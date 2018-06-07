@@ -24,7 +24,19 @@
             <navigator url="/pages/paper/index?type=actList" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/anno.png" />
                     <view class="weui-grid__label">活动管理</view>
-            </navigator>           
+            </navigator>   
+            <navigator url="/pages/paper/index?type=actSetSignin" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../images/anno.png" />
+                    <view class="weui-grid__label">签到管理</view>
+            </navigator>   
+            <navigator url="/pages/paper/index?type=actSetTmpl" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../images/anno.png" />
+                    <view class="weui-grid__label">自定义模板管理</view>
+            </navigator>       
+            <navigator url="/pages/paper/index?type=actProcess" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../images/anno.png" />
+                    <view class="weui-grid__label">工作流程管理</view>
+            </navigator> 
         </view>
 
         <view class="weui-cells__title">团队报表</view>
