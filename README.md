@@ -29,6 +29,12 @@
 
 <img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/ai.jpg' alt='preview' />
 
+#1.8.0（开发中）
+- 小程序中新增管理Web页（签到，流程定义和自定义模板）
+
+#1.7.0
+- 新增团队活动
+
 #V1.6.1
 - 活动生效时的微信提醒；
 - 
