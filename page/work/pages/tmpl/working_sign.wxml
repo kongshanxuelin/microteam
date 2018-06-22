@@ -1,0 +1,29 @@
+<template name="sign">
+<view class="weui-panel">
+            <view class="weui-panel__hd">签到</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <view class="weui-cell weui-cell_access" bindtap="bindSignIn" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../images/workon.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="title pb8">上班打卡</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access {{(signin_time!='' && signin_time>workon_time) ? 'red' : 'green'}}">
+                            {{signin_time == '' ? '尚未签到' : signin_time}}
+                            </view>
+                        </view>
+                        <view url="" class="weui-cell weui-cell_access" bindtap="bindSignOut" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../images/workoff.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="title pb8">下班打卡</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access {{(signout_time!='' && signout_time<workoff_time) ? 'red' : 'green'}}">
+                            {{signout_time == '' ? '尚未签出' : signout_time}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+</template>        

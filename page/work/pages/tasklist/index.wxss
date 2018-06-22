@@ -1,0 +1,11 @@
+@import "../tmpl/tabbar.wxss";
+
+.page{
+  margin-bottom: 70px;
+  background-color: #fff;
+}
+
+button{
+  height:22px;
+  margin-right: 10px;
+}

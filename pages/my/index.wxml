@@ -24,7 +24,7 @@
             </view>
 
             <view class="my" >
-                <navigator url="/pages/bond/index" class="my-item flex-wrp">
+                <navigator url="/page/ai/pages/bond/index" class="my-item flex-wrp">
                     <view class="myitem-icon flex-item" >
                         <image src="../../images/scan.png"></image>
                     </view>
@@ -36,7 +36,7 @@
             </view>
             
             <view class="my" >
-                <navigator url="/pages/contact/index" class="my-item flex-wrp">
+                <navigator url="/page/work/pages/contact/index" class="my-item flex-wrp">
                     <view class="myitem-icon flex-item" >
                         <image src="../../images/contact.png"></image>
                     </view>
@@ -109,6 +109,10 @@
                         <text class="user-info-memo">缓存大小：{{cacheSize}} MB / {{cacheLimitSize}} MB</text>
                     </view>
                 </view>
+            </view>
+
+            <view class="my fd" wx:if="{{showFeedback}}">
+              <button type="primary" open-type="feedback">给我们提意见</button>
             </view>
 
         </view>

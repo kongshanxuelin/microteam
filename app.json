@@ -2,40 +2,19 @@
   "pages": [
     "pages/starter/starter",
     "pages/index/index",
-    "pages/ai/index",
     "pages/dyna/index",
     "pages/dyna/publish/index",
-    "pages/contact/index",
-    "pages/apps/project/detail/detail",
-    "pages/apps/project/index",
     "pages/index/teamadd/teamadd",
     "pages/index/teamchange/teamchange",
     "pages/work/index",
-    "pages/apps/project/add/index",
     "pages/common/selectuser/selectuser",
-    "pages/working/worknote/writenote",
-    "pages/working/task/task",
     "pages/working/index",
     "pages/my/index",
-    "pages/working/tasklist/index",
     "pages/my/team-share/index",
-    "pages/working/netflow/index",
-    "pages/apps/anno/publish",
-    "pages/apps/sumslack_bind/index",
-    "pages/apps/stats/sign/index",
-    "pages/working/worknote/list/index",
     "pages/my/team-share-confirm/index",
     "pages/my/info/index",
-    "pages/working/server/index",
-    "pages/working/doc/index",
-    "pages/apps/chat/index",
-    "pages/working/doc/list/index",
-    "pages/working/process/index",
-    "pages/working/process/mylist/index",
     "pages/paper/index",
-    "pages/paper/share/index",
-    "pages/bond/index",
-    "pages/ai/ocr/index"
+    "pages/paper/share/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -75,6 +54,45 @@
         "text": "我的"
       }
     ]
+  },
+   "subPackages": [
+    {
+      "root": "page/ai/",
+      "pages": [
+	"pages/ai/index",
+	"pages/ai/ocr/index",
+	"pages/bond/index"
+      ]
+     },
+     {
+      "root": "page/work/",
+      "pages": [
+	"pages/worknote/writenote",
+	"pages/worknote/list/index",
+	"pages/task/task",
+	"pages/process/index",
+	"pages/process/mylist/index",
+        "pages/server/index",
+	"pages/tasklist/index",
+	"pages/netflow/index",
+	"pages/doc/list/index",
+        "pages/doc/index",
+	"pages/project/add/index",
+	"pages/project/detail/detail",
+	"pages/project/index",
+	"pages/anno/publish",
+	"pages/sumslack_bind/index",
+	"pages/stats/sign/index",
+        "pages/contact/index",
+	"pages/chat/index"
+      ]
+     }
+   ],  
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
   },
   "debug": true
 }

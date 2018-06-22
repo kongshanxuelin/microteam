@@ -1,4 +1,4 @@
-<import src="../../components/button/button.wxml"/>
+<import src="../../page/components/button/button.wxml"/>
 <template is="button" data="{{ ...$wux.button.br }}"/>
 
 <view class="box" bindtap="tapBody">
@@ -25,7 +25,7 @@
   <!--占位行-->
   <view class="lie"></view>
 
-  <view class="content" wx:for="{{page.result}}" wx:for-index="k">
+  <view class="content" wx:key="{{avatar}}" wx:for="{{page.result}}" wx:for-index="k">
     <!--头像-->
     <view class="head">
       <image class="baseimg"  src="{{page.result[k].avatar}}" mode="scaleToFill"></image>

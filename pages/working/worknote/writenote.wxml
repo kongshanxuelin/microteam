@@ -1,9 +1,0 @@
-<import src="../../tmpl/eform.wxml" />
-<view class="page">
-  <view class="page__bd">
-      <template is="eform" data="{{...tmpl}}"/>
-      <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="submitReport">提交报告</button>
-      </view>
-  </view>
-</view>

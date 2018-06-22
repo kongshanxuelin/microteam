@@ -1,0 +1,42 @@
+<!--index.wxml-->
+
+<!-- 引入组件 -->
+<import src="../../../components/welCropper/welCropper.wxml" />
+
+<!-- 调用组件 -->
+<!-- <template is="welCropper" data="{{data:cropperData, cropperMovableItems:cropperMovableItems}}"></template> -->
+ <template is="welCropper" data="{{cropperData:cropperData, cropperMovableItems:cropperMovableItems, cropperChangableData:cropperChangableData}}"></template> 
+
+<!-- 用于选择图片，传入cropper中 -->
+<view class="page__bd">
+  <view class="section__title">对准债券代码拍照并选取有效区域，平行于屏幕拍照有利于提供识别准确率</view>
+
+      <scroll-view style="height: {{height}}px;width: 100%" scroll-y="true" wx:if="{{bonds.length>0}}">
+        <view class="weui-panel__hd">识别结果</view>
+        
+        <block wx:for="{{bonds}}">
+          <view class="weui-panel__bd">
+            <view class="weui-cell weui-cell_access" bindtap='goBondDetail' wx:for-item="bond" wx:for="{{item.bonds}}"  data-id="{{bond.bondkey}}">
+                <view class="weui-cell__bd">
+                  <view class="weui-media-box__title weui-media-box__title_in-text">{{bond.shortname}} - {{bond.bondid}}</view>
+                  <view class="weui-media-box__desc">
+                    <text class="yw">原文：</text>
+                    <text class="yw2">{{bond.qq}}</text>
+                  </view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+                
+                </view>
+            </view>
+          </view>         
+        </block>
+        
+
+   </scroll-view>
+
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap='selectTap' data-mode='rectangle'>拍照选取</button>
+    <button class="weui-btn" open-type="share" type="warn" plain="true">分享给好友</button>
+    <button class="weui-btn" bindtap='shareQrCode' type="warn" plain="true">小程序码分享</button>
+  </view>
+</view>

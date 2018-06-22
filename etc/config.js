@@ -19,7 +19,7 @@ export default {
   uploadPath: "https://wx.sumslack.com/microteam/upload/",
 
 
-	version:"1.7.2",
+	version:"1.7.6",
 	desc:"Bug Fixed."
 	
 }

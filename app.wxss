@@ -1,6 +1,6 @@
 /**app.wxss**/
 @import 'style/weui.wxss';
-@import 'components/wux.wxss';
+@import 'page/components/wux.wxss';
 
 page{
     background-color: #E8E8E8;

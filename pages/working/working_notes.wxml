@@ -1,0 +1,40 @@
+ <template name="note">
+ <view class="weui-panel">
+            <view class="weui-panel__hd">工作汇报</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <navigator url="/page/work/pages/worknote/list/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="/images/notelist.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="title pb8">我的日志</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+
+                        <navigator url="/page/work/pages/worknote/writenote?act=day&tmplId=lkbcyn5beo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="/images/note_day.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="title pb8">发日志</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="/page/work/pages/worknote/writenote?act=week&tmplId=lkswz4ta0w" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="/images/note_week.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="title pb8">发周报</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="/page/work/pages/worknote/writenote?act=month&tmplId=lksxt5oxds" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="/images/note_month.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="title pb8">发月报</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+ </template>       

@@ -1,20 +1,20 @@
-import { $wuxButton } from '../../components/wux'
+import { $wuxButton } from '../../page/components/wux'
 //index.js
 //获取应用实例
 var App = getApp()
 Page({
   data: {
     navButtons: [
-      { text: "指派任务", icon: "../../images/working/task.png", link: "/pages/working/task/task" },
-      { text: "工作日志", icon: "../../images/working/note.png", link: "/pages/working/worknote/writenote?act=day&tmplId=lkbcyn5beo" },
-      { text: "团队文档", icon: "../../images/working/document.png", link: "/pages/working/doc/index" },
-      { text: "试题秀", icon: "../../images/working/doc.png", link: "/pages/paper/index" },
-      { text: "拉人入团", icon: "../images/share.png", link: "/pages/my/team-share/index" }
+      { text: "指派任务", icon: "/images/working/task.png", link: "/page/work/pages/task/task" },
+      { text: "工作日志", icon: "/images/working/note.png", link: "/page/work/pages/worknote/writenote?act=day&tmplId=lkbcyn5beo" },
+      { text: "团队文档", icon: "/images/working/document.png", link: "/page/work/pages/doc/index" },
+      { text: "试题秀", icon: "/images/working/doc.png", link: "/pages/paper/index" },
+      { text: "拉人入团", icon: "/images/share.png", link: "/pages/my/team-share/index" }
     ],
-    icon: '../../images/home.png',
-    taskIcon:'../../images/working/task.png',
-    processIcon:'../../images/working/process.png',
-    actIcon: '../../images/working/anno.png',
+    icon: '/images/home.png',
+    taskIcon:'/images/working/task.png',
+    processIcon:'/images/working/process.png',
+    actIcon: '/images/working/anno.png',
     team:{},
     anno:{},
     task:{},
@@ -41,11 +41,11 @@ Page({
       ],
       buttonClicked(index, item) {
         if (index == 1) {
-          App.WxService.navigateTo('/pages/bond/index');
+          App.WxService.navigateTo('/page/ai/pages/bond/index');
         } else if (index == 0) {
-          App.WxService.navigateTo('/pages/contact/index');
+          App.WxService.navigateTo('/page/work/pages/contact/index');
         } else if (index == 2) {
-          App.WxService.navigateTo('/pages/ai/index');
+          App.WxService.navigateTo('/page/ai/pages/ai/index');
         }
         return true
       }
@@ -98,6 +98,14 @@ Page({
 
       if(typeof cb === "function"){
         cb();
+      }
+
+      var _num = json.processList.length + json.task.taskNum;
+      if (_num > 0) {
+        wx.setTabBarBadge({
+          index: 0,
+          text: _num + ""
+        })
       }
     });
   },

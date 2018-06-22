@@ -1,0 +1,35 @@
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #F4F5FA;
+  color: darkgray;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.txt{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

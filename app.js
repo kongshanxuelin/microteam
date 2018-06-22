@@ -35,39 +35,7 @@ App({
     });
     */
 
-    /*
-    *登录步骤：
-    1：用wx.checkSession检查登录态
-    2：fail：利用wx.login根据code换取token
-    3：success：判断缓存是否有user，远程检测token合法性
-    4：判断当前用户是否在某个团队，某种提示创建团队，拉人进入
-    */
-    //检查登录态
-    wx.checkSession({
-        success: function(){
-          //缓存token
-          that.globalData.user = that.getCache("user");
-
-          // if (options.query && options.query.scene) {
-          //   return;
-          // }
-
-          if (that.globalData.user.user && that.globalData.user.user.teamId != ""){
-            that.putCache("teamId", that.globalData.user.user.teamId);
-            that.putCache("teamName", that.globalData.user.user.teamName);
-          }
-          if((typeof that.globalData.user === "undefined") || (that.globalData.user === "")){
-              that.login();
-          }else{
-              that.log("that.globalData.token:", that.getToken());
-              that.calUserFromServer();
-          }
-      },
-      fail: function(){
-        that.log("强制重新从服务端换取token，因为session_key已经过期");
-        that.login();
-      }
-    });
+    
   },
   calUserFromServer:function(){
     var that = this;
@@ -87,7 +55,7 @@ App({
       }
     );
   },
-  login:function(){
+  login:function(cb){
     var that = this;
     this.log("login func start...", that.globalData.scene);
     //调取个人资料

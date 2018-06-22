@@ -35,7 +35,7 @@ Page({
   startProcess:function(e){
     var id = e.currentTarget.dataset.id;
     App.log("startProcess:",e,id);
-    App.WxService.navigateTo('/pages/working/process/index?id='+id);
+    App.WxService.navigateTo('/page/work/pages/process/index?id='+id);
   },
   inputTyping: function (e) {
         this.setData({

@@ -1,14 +1,14 @@
-<import src="../tmpl/working_sign.wxml" />
-<import src="../tmpl/working_task.wxml" />
-<import src="../tmpl/working_notes.wxml" />
-<import src="../tmpl/working_report.wxml" />
+<import src="working_sign.wxml" />
+<import src="working_task.wxml" />
+<import src="working_notes.wxml" />
+<import src="working_report.wxml" />
 
 <view class="page">
     <view class="page__bd" style="margin-bottom:20rpx;">
 
         <view bindtap="goAllAppPage" style="display:flex;margin-top:5px;flex-direction:row-reverse;">
           <text style="height:20px;line-height:20px;font-size:14px;padding-right:8px;">应用管理</text>
-          <image src="../../images/all.png" style="margin-right:4px;width:20px;height:20px;"></image>
+          <image src="/images/all.png" style="margin-right:4px;width:20px;height:20px;"></image>
         </view>
 
 
@@ -17,7 +17,7 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator url="/pages/working/doc/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <navigator url="/page/work/pages/doc/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd"><image src="../../images/doc.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view class="title pb8">共享文档</view>
@@ -76,7 +76,7 @@
                       <block wx:else> 
                         <view class="weui-cells weui-cells_in-small-appmsg" wx:for="{{processList}}" wx:key="{{id}}">
                             <view bindtap="startProcess" data-id="{{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                                <view class="weui-cell__hd"><image src="../images/process.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                                <view class="weui-cell__hd"><image src="/images/process.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                                 <view class="weui-cell__bd weui-cell_primary">
                                     <view class="title pb8">{{item.title}}</view>
                                 </view>

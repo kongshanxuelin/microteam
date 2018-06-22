@@ -1,4 +1,4 @@
-import { $wuxButton } from '../../components/wux'
+import { $wuxButton } from '../../page/components/wux'
 const App = getApp();
 var util = require('../../utils/util.js')
 Page({

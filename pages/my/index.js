@@ -1,7 +1,9 @@
 const App = getApp()
+var util = require('../../utils/util.js')
 Page({
   data: {
     userInfo: {},
+    showFeedback:false,
     cacheSize:0,
     version:App.Config.version,
     desc:App.Config.desc
@@ -18,8 +20,16 @@ Page({
 
   },
   onLoad: function () {
-    console.log('mypage onLoad:', App)
     var that = this;
+    App.WxService.getSystemInfo().then(info => {
+      let v = util.compareVersion(info.SDKVersion, "2.1.0");
+      console.log("********v:",v);
+      if(v>=0){
+        that.setData({
+          showFeedback:true
+        });
+      }
+    });
     App.getUserInfo().then(userInfo => {
       that.setData({
         userInfo:userInfo,

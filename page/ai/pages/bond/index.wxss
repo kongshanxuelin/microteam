@@ -1,0 +1,25 @@
+/**index.wxss**/
+@import "../../../components/welCropper/welCropper.wxss";
+.img {
+  width: 100%;
+  text-align: center;
+}
+.page {
+  margin: 5px;
+}
+.page__bd {
+  margin:20px;
+}
+.section__title {
+  color:grey;
+  font-size: 12px;
+}
+.yw {
+  color:grey;
+  font-size: 12px;
+}
+
+.yw2 {
+  color:grey;
+  font-size: 12px;
+}

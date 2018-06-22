@@ -1,4 +1,4 @@
-<import src="../../components/button/button.wxml"/>
+<import src="../../page/components/button/button.wxml"/>
 <template is="button" data="{{ ...$wux.button.br }}"/>
 
 <view class="page">
@@ -20,7 +20,7 @@
             </block>
         </view>
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="/pages/working/tasklist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="/page/work/pages/tasklist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="{{taskIcon}}" class="item-image"></image>
                     <view class="weui-badge" wx:if="{{task.taskNum>0}}"
@@ -38,7 +38,7 @@
                   </view>
                 </view>
             </navigator>
-            <navigator url="/pages/working/process/mylist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="/page/work/pages/process/mylist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="{{processIcon}}" class="item-image"></image>
                     <view class="weui-badge" wx:if="{{process.num>0}}"

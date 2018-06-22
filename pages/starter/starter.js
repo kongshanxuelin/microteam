@@ -30,6 +30,26 @@ Page({
               if (App.globalData.shareTeamId!=""){
                 App.log("加入团队确认：", App.globalData.shareTeamId);
               }
+
+              //检查登录态
+              wx.checkSession({
+                success: function () {
+                  App.globalData.user = App.getCache("user");
+                  console.log("***global user:", App.globalData.user);
+                  if ((typeof App.globalData.user === "undefined") || (App.globalData.user === "")) {
+                    App.log("****no cache user")
+                    App.login();
+                  } else {
+                    //检查wx.sumslack.com的token当前是否有效
+                    App.log("****cache user check token")
+                    App.calUserFromServer();
+                  }
+                },
+                fail: function () {
+                  App.log("强制重新从服务端换取token，因为session_key已经过期");
+                  App.login();
+                }
+              });
               /*
               wx.reLaunch({
                 url: '/pages/index/index'
@@ -125,8 +145,14 @@ Page({
       });  
   },
   bindGetUserInfo: function (e) {
-    setTimeout(() => {
-      this.doRelauch();
-    },500);
+    console.log("*******bind user info:",e);
+    if(typeof e.detail.userInfo == "undefined"){
+      App.alert("必须授权登录才能使用!")
+    }else{
+      // setTimeout(() => {
+      //   this.doRelauch();
+      // },500);
+      App.login();
+    }
   }
 })
