@@ -14,7 +14,8 @@
     "pages/my/team-share-confirm/index",
     "pages/my/info/index",
     "pages/paper/index",
-    "pages/paper/share/index"
+    "pages/paper/share/index",
+    "pages/myproject/myproject"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,10 +37,10 @@
         "text": "小团队"
       },
       {
-        "pagePath": "pages/dyna/index",
-        "iconPath": "images/dyna.png",
-        "selectedIconPath": "images/dyna-active.png",
-        "text": "发现"
+        "pagePath": "pages/myproject/myproject",
+        "iconPath": "images/prj.png",
+        "selectedIconPath": "images/prj-active.png",
+        "text": "我的项目"
       },
       {
         "pagePath": "pages/working/index",
@@ -55,39 +56,39 @@
       }
     ]
   },
-   "subPackages": [
+  "subPackages": [
     {
       "root": "page/ai/",
       "pages": [
-	"pages/ai/index",
-	"pages/ai/ocr/index",
-	"pages/bond/index"
+        "pages/ai/index",
+        "pages/ai/ocr/index",
+        "pages/bond/index"
       ]
-     },
-     {
+    },
+    {
       "root": "page/work/",
       "pages": [
-	"pages/worknote/writenote",
-	"pages/worknote/list/index",
-	"pages/task/task",
-	"pages/process/index",
-	"pages/process/mylist/index",
+        "pages/worknote/writenote",
+        "pages/worknote/list/index",
+        "pages/task/task",
+        "pages/process/index",
+        "pages/process/mylist/index",
         "pages/server/index",
-	"pages/tasklist/index",
-	"pages/netflow/index",
-	"pages/doc/list/index",
+        "pages/tasklist/index",
+        "pages/netflow/index",
+        "pages/doc/list/index",
         "pages/doc/index",
-	"pages/project/add/index",
-	"pages/project/detail/detail",
-	"pages/project/index",
-	"pages/anno/publish",
-	"pages/sumslack_bind/index",
-	"pages/stats/sign/index",
+        "pages/project/add/index",
+        "pages/project/detail/detail",
+        "pages/project/index",
+        "pages/anno/publish",
+        "pages/sumslack_bind/index",
+        "pages/stats/sign/index",
         "pages/contact/index",
-	"pages/chat/index"
+        "pages/chat/index"
       ]
-     }
-   ],  
+    }
+  ],
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,

@@ -6,7 +6,7 @@
 }
 .info {
   color: green;
-  font-size:14px;
+  font-size:30rpx;
 }
 .btnok {
   margin-top:20px;
@@ -15,8 +15,8 @@
   color: #FFEBC8;
 }
 .info2 {
-  color: orangered;
-  font-size:14px;
+  color: #666666;
+  font-size:25rpx;
   margin-top:20px;
 }
 .img {

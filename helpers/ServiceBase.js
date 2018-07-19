@@ -170,12 +170,13 @@ class ServiceBase {
           request.header.Authorization = 'Bearer ' + wx.getStorageSync('token')
         }
 
-        wx.showToast({
-          title: '操作中...',
-          icon: 'loading',
-          duration: 10000,
-          mask: !0,
-        })
+        // wx.showToast({
+        //   title: '操作中...',
+        //   icon: 'loading',
+        //   duration: 10000,
+        //   mask: !0,
+        // })
+        wx.showNavigationBarLoading()
 
         return request
       },
@@ -191,7 +192,8 @@ class ServiceBase {
             url: '/pages/login/index'
           })
         }
-        wx.hideToast()
+        //wx.hideToast()
+        wx.hideNavigationBarLoading()
         return response
       },
       responseError: (responseError) => {

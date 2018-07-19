@@ -5,19 +5,19 @@
     <view class="page__bd">
         <view class="weui-cells__title">团队管理</view>
         <view class="weui-grids">
-            <navigator url="/pages/apps/anno/publish" class="weui-grid" hover-class="weui-grid_active">
+            <navigator url="/page/work/pages/anno/publish" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/anno.png" />
                     <view class="weui-grid__label">发布公告</view>
             </navigator>
-            <navigator url="/pages/apps/project/index" class="weui-grid" hover-class="weui-grid_active">
+            <navigator url="/page/work/pages/project/index" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/project.png" />
                     <view class="weui-grid__label">项目管理</view>
             </navigator>
-            <navigator url="/pages/contact/index" class="weui-grid" hover-class="weui-grid_active">
+            <navigator url="/page/work/pages/contact/index" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/contact.png" />
                     <view class="weui-grid__label">通讯录</view>
             </navigator>
-            <navigator url="/pages/working/doc/index" class="weui-grid" hover-class="weui-grid_active">
+            <navigator url="/page/work/pages/doc/index" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/doc.png" />
                     <view class="weui-grid__label">共享文档</view>
             </navigator>  
@@ -41,11 +41,11 @@
 
         <view class="weui-cells__title">团队报表</view>
         <view class="weui-grids">
-            <navigator url="../apps/stats/sign/index" class="weui-grid" hover-class="weui-grid_active">
+            <navigator url="/page/work/pages/stats/sign/index" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/kaoqin.png" />
                     <view class="weui-grid__label">考勤统计</view>
             </navigator>
-            <navigator url="/pages/working/worknote/list/index" class="weui-grid" hover-class="weui-grid_active">
+            <navigator url="/page/work/pages/worknote/list/index" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../images/report.png" />
                     <view class="weui-grid__label">工作报告</view>
             </navigator>

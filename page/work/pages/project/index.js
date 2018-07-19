@@ -69,10 +69,10 @@ Page({
     });
   },
   goProjectAdd:function(){
-      App.WxService.navigateTo('/pages/apps/project/add/index');
+      App.WxService.navigateTo('add/index');
   },
   projectTap:function(e){
       var _id = e.currentTarget.dataset.projectid;
-      App.WxService.navigateTo('/pages/apps/project/detail/detail?id='+_id);
+      App.WxService.navigateTo('detail/detail?id='+_id);
   }
 })

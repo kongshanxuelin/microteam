@@ -25,6 +25,13 @@ class Service extends ServiceBase {
 			projectSave: 'r/project/save',  //保存项目	
 			projectRemove:'r/project/remove',//删除项目
 			projectFinish:'r/project/setProjectSts',//完成项目
+
+      //项目费用统计
+      projectCalsList: 'r/project/cals/list', 
+      projectCalsAdd: 'r/project/cals/add', 
+      projectCalsSave: 'r/project/cals/save', 
+      projectCalsRemove: 'r/project/cals/remove', 
+
 			//任务
       taskAdd: 'r/task/add',
       taskList: 'r/task/list',
@@ -278,6 +285,19 @@ class Service extends ServiceBase {
   }	
   actJoin(params) {
     return this.getRequest(this.$$path.actJoin, params)
+  }	
+
+  projectCalsList(params) {
+    return this.getRequest(this.$$path.projectCalsList, params)
+  }	
+  projectCalsAdd(params) {
+    return this.getRequest(this.$$path.projectCalsAdd, params)
+  }	
+  projectCalsSave(params) {
+    return this.getRequest(this.$$path.projectCalsSave, params)
+  }	
+  projectCalsRemove(params) {
+    return this.getRequest(this.$$path.projectCalsRemove, params)
   }	
   
   sumslackCheck(params) {

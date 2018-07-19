@@ -1,0 +1,24 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 2rpx;
+}
+
+.weui-cells__title_right {
+  text-align: right;
+}
+
+.notdone {
+  color:palevioletred;
+}
+
+.done{
+  color:darkcyan;
+  font-weight: bold;
+}

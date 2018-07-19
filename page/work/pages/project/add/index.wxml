@@ -14,10 +14,10 @@
         </view>
 
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="../../../common/selectuser/selectuser?mode=single&p=fzr&uid={{fzr.uid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="/pages/common/selectuser/selectuser?mode=single&p=fzr&uid={{fzr.uid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd weui-cell__ft_in-access">项目负责人 {{fzr.nick}}</view>
             </navigator>
-            <navigator url="../../../common/selectuser/selectuser?mode=multi&p=cyz&uid={{cyz.uid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="/pages/common/selectuser/selectuser?mode=multi&p=cyz&uid={{cyz.uid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd weui-cell__ft_in-access">项目参与者 
                     <text wx:for-index="idx" wx:for="{{cyz.nick}}">{{idx==0?"":","}}{{item}}</text>
                 </view>

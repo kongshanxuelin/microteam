@@ -1,7 +1,7 @@
 <view class="page">
     <view class="page__bd">
         <view class="weui-flex" style="justify-content:flex-end;margin:4px;">
-            <image style="width:32px;height:32px;" bindtap="goProjectAdd" src="../../images/add.png"></image>
+            <image style="width:32px;height:32px;" bindtap="goProjectAdd" src="../images/add.png"></image>
         </view>
         <view class="weui-search-bar">
             <view class="weui-search-bar__form">
@@ -21,12 +21,12 @@
         </view>
 
         <view class="weui-cells weui-cells_after-title">
-            <view wx:for="{{projects}}" wx:key="*this" data-projectid="{{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='projectRemove'>
+            <view wx:for="{{projects}}" wx:key="*this" data-projectid="{{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="{{item.owner.avatar}}" style="margin-right: 5px;vertical-align: middle;width:28px; height: 28px;"></image>
                 </view>
-                <view class="weui-cell__bd">{{item.content}}</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access">{{item.members.length}}人参与</view>
+                <view class="weui-cell__bd" bindtap='projectTap'>{{item.content}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" bindtap='projectRemove'>删除</view>
             </view>
            
         </view>

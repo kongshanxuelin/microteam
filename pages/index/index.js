@@ -8,7 +8,7 @@ Page({
       { text: "指派任务", icon: "/images/working/task.png", link: "/page/work/pages/task/task" },
       { text: "工作日志", icon: "/images/working/note.png", link: "/page/work/pages/worknote/writenote?act=day&tmplId=lkbcyn5beo" },
       { text: "团队文档", icon: "/images/working/document.png", link: "/page/work/pages/doc/index" },
-      { text: "试题秀", icon: "/images/working/doc.png", link: "/pages/paper/index" },
+      { text: "团队圈", icon: "/images/dyna-active.png", link: "/pages/dyna/index" },
       { text: "拉人入团", icon: "/images/share.png", link: "/pages/my/team-share/index" }
     ],
     icon: '/images/home.png',

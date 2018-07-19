@@ -13,10 +13,10 @@ Page({
     console.log("_scene:" + _scene);
     if (_scene == 'bond') {
         App.log("microTeam", _scene);
-        App.WxService.navigateTo("/pages/bond/index");
+        App.WxService.navigateTo("/page/ai/pages/bond/index");
     }else if (_scene.indexOf('ai')==0) {
       _scene = _scene.substring(3, _scene.length);
-      App.WxService.navigateTo("/pages/ai/ocr/index?id=" + _scene);
+      App.WxService.navigateTo("/page/ai/pages/ai/ocr/index?id=" + _scene);
     }else{
         //查看用户是否有过授权
         wx.getSetting({

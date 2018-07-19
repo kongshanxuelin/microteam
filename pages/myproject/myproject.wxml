@@ -1,0 +1,17 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">
+          <navigator url='/page/work/pages/project/index'>添加新项目</navigator>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{projects}}" wx:key="*this">
+                <view bindtap='clickProject' data-id="{{item.id}}" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="/images/doc.png" />
+                    <view class="weui-grid__label">{{item.title}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

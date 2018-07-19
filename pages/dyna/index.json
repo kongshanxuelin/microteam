@@ -1,7 +1,4 @@
 {
     "navigationBarTitleText": "团队动态",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
 }

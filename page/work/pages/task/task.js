@@ -11,6 +11,7 @@ Page({
     content:"",
     endTime:"未设置",
     uid:"",
+    proId:"",
     projectList: [
       { id: "1", title:"年假"},
       { id: "2", title: "事病假"},
@@ -26,8 +27,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    
+    var _proId = options.proId || "";
+    console.log("proId:",_proId);
     this.setData({
+      "proId": _proId,
       "token": App.getToken(),
       uid:App.globalData.user.user.uid
     });
@@ -68,6 +71,7 @@ Page({
     });
   },
   addTask:function(){
+    var that = this;
     if (typeof this.data.fzr.uid === "undefined"){
       App.alert("请选择任务负责人");
       return;
@@ -83,20 +87,28 @@ Page({
     if (typeof this.data.cyr.uid === "object"){
       this.data.cyr.uid = this.data.cyr.uid.join(",");
     }
-    App.HttpServiceWork.taskAdd({
+    var _params = {
       "token": App.getToken(),
       "proid": this.data.projectList[this.data.projectListIndex].id,
       "tmpl_id": "1",
-      "content":this.data.content,
+      "content": this.data.content,
       "end_time": this.data.endTime === "未设置" ? "" : this.data.endTime,
       "fzr": this.data.fzr.uid,
       "joiner": this.data.cyr.uid,
       "auditer": this.data.shr.uid
-    }).then(json => {
+    };
+    if (this.data.proId!=""){
+      _params.proid = this.data.proId;
+    }
+    App.HttpServiceWork.taskAdd(_params).then(json => {
       if(json.ret){
-        wx.switchTab({
-          url: '/pages/index/index'
-        });  
+        if (that.data.proId === ""){
+          wx.switchTab({
+            url: '/pages/index/index'
+          });  
+        }else{
+          App.WxService.navigateTo('/page/work/pages/project/detail/detail?id=' + that.data.proId);
+        }
       }else{
         App.alert("操作失败！");
       }
