@@ -31,6 +31,8 @@ class Service extends ServiceBase {
       projectCalsAdd: 'r/project/cals/add', 
       projectCalsSave: 'r/project/cals/save', 
       projectCalsRemove: 'r/project/cals/remove', 
+      projectCalsGet: 'r/project/cals/get', 
+      projectCalsCate: 'r/project/cals/cate', 
 
 			//任务
       taskAdd: 'r/task/add',
@@ -299,6 +301,12 @@ class Service extends ServiceBase {
   projectCalsRemove(params) {
     return this.getRequest(this.$$path.projectCalsRemove, params)
   }	
+  projectCalsGet(params) {
+    return this.getRequest(this.$$path.projectCalsGet, params)
+  }
+  projectCalsCate(params) {
+    return this.getRequest(this.$$path.projectCalsCate, params)
+  }
   
   sumslackCheck(params) {
     return this.getRequest(this.$$path.sumslackCheck, params)

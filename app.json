@@ -71,6 +71,7 @@
         "pages/worknote/writenote",
         "pages/worknote/list/index",
         "pages/task/task",
+        "pages/taskcal/index",
         "pages/process/index",
         "pages/process/mylist/index",
         "pages/server/index",

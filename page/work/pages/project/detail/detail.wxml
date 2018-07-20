@@ -1,4 +1,15 @@
 <view class="page">
+    <view class="page__hd">
+        <view class="page__desc prj_stat">
+          项目
+          收入：
+          <text class="shouru">{{listZhang.zsr}}</text>，
+          支出：
+          <text class="zhichu">{{listZhang.zzc}}</text>，
+          结余：
+          <text class="jieyu">{{listZhang.zyy}}</text>
+        </view>
+    </view>
     <view class="page__bd">
        <view class="weui-tab">
             <view class="weui-navbar">
@@ -24,22 +35,20 @@
                   </view>
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-                  <view class="weui-cells__title weui-cells__title_right" bindtap='addZhang'>添加一笔</view>
+                  <view class="weui-cells__title weui-cells__title_right" >
+                  <text bindtap='addZhang'>添加一笔</text>
+                  </view>
                     <view class="weui-cells weui-cells_after-title">
-                        <view class="weui-cell">
+                        <view class="weui-cell" data-id="{{item.id}}" bindlongtap='showZhangAction' wx:for="{{listZhang.page.result}}" wx:key="*this">
                             <view class="weui-cell__hd">
                                 <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                             </view>
-                            <view class="weui-cell__bd">标题文字</view>
-                            <view class="weui-cell__ft">说明文字</view>
+                            <view class="weui-cell__bd {{item.d == 0 ? 'shouru':'zhichu'}}">
+                            <text class="dd" wx:if="{{item.cname}}">[{{item.cname.title}}]</text>
+                            {{item.je}} </view>
+                            <view class="weui-cell__ft"><text class="dd">{{item.dd}}</text></view>
                         </view>
-                        <view class="weui-cell">
-                            <view class="weui-cell__hd">
-                                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-                            </view>
-                            <view class="weui-cell__bd">标题文字</view>
-                            <view class="weui-cell__ft">说明文字</view>
-                        </view>
+                      
                     </view>
                 </view>
             </view>

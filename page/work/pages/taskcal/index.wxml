@@ -1,0 +1,71 @@
+<view class="page">
+   <view class="page__bd">
+      
+      <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+
+                  <view class="weui-tab">
+                      <view class="weui-navbar">
+                          <block wx:for="{{tabs}}" wx:key="*this">
+                              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                                  <view class="weui-navbar__title">{{item}}</view>
+                              </view>
+                          </block>
+                          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                      </view>
+                      <view class="weui-tab__panel">
+                          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                              <text class="pr10 {{cate_check[item.id]?'bag-checked':'bag'}}"  
+                                  wx:for="{{cate.sr}}" data-id="{{item.id}}" bindtap='checkCate' wx:key="*this">{{item.title}}</text>
+                          </view>
+                          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                            <text class="pr10 {{cate_check[item.id]?'bag-checked':'bag'}}" 
+                                wx:for="{{cate.zc}}" data-id="{{item.id}}" bindtap='checkCate' wx:key="*this">{{item.title}}</text>
+                          </view>
+                      </view>
+                  </view>
+                </view>
+            </view>
+      </view>
+
+       <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <input placeholder="输入金额" 
+                    bindinput="inputje"
+                    class="weui-input" type="digit" value="{{cal.je}}" />
+                </view>
+            </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="输入费用描述，可选" 
+                    style="height: 3.3em" bindinput="bindInputTaskContent">{{cal.dd}}</textarea>
+                </view>
+            </view>
+      </view>
+
+<!--
+      <view class="weui-cells weui-cells_after-title">
+            <navigator url="/pages/common/selectuser/selectuser?mode=single&p=fzr" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">负责人</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{fzr.nick}}</view>
+            </navigator>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+            <navigator url="/pages/common/selectuser/selectuser?mode=multi&p=cyr" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">参与人</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{cyr.nick}}</view>
+            </navigator>
+      </view>
+
+-->
+      <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="addCalIt">{{cal.id===""?"添加一笔":"保存"}}</button>
+      </view>
+   </view>
+</view>

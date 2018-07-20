@@ -1,0 +1,19 @@
+.pr10 {
+  margin-right: 20rpx;
+  display:inline-block;
+  padding:2px 12px;
+  line-height:22px;
+  border:1px solid #aaa;
+  margin-top:10rpx;
+  border-radius:4px;
+  font-size:28rpx;
+}
+
+.bag {
+  color:#666;
+}
+
+.bag-checked {
+  background-color:#FDBA4E;
+  color:#444;
+}

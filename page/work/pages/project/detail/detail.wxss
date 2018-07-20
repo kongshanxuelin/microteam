@@ -22,3 +22,25 @@ page,
   color:darkcyan;
   font-weight: bold;
 }
+
+.zhichu {
+  color:palevioletred;
+}
+
+.shouru {
+  color:green;
+  font-weight: bold;
+}
+
+.jieyu {
+  color:orange;
+}
+
+.dd {
+  color:gray;
+}
+
+.prj_stat {
+  font-size:28rpx;
+  padding:12rpx;
+}
