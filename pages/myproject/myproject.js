@@ -72,10 +72,14 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  projectAction:function(){
+    wx.showActionSheet({
+      itemList: ['删除'],
+      success: function (res) {
+        if (res.tapIndex == 0) {
+
+        }
+      }
+    });
   }
 })

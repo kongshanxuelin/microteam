@@ -8,7 +8,7 @@ Page({
     listTask:{},
     listZhang:{},
 
-    tabs:["任务","收支"],
+    tabs:["任务","项目收支"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0
@@ -108,5 +108,15 @@ Page({
       }
     })
 
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      console.log(res.target)
+    }
+    console.log(App.globalData.user)
+    return {
+      title: App.globalData.user.user.nick + '邀请您加入项目：[' + this.data.project.title +']',
+      path: '/pages/starter/starter?scene=shareproject&prjid=' + this.data.projectId
+    }
   }
 })

@@ -11,6 +11,9 @@
         </view>
     </view>
     <view class="page__bd">
+       <view style="text-align:right;padding-right:20rpx;">
+            <button open-type="share" class="btn-invite">邀请新成员加入</button>
+       </view>
        <view class="weui-tab">
             <view class="weui-navbar">
                 <block wx:for="{{tabs}}" wx:key="*this">

@@ -41,6 +41,18 @@ page,
 }
 
 .prj_stat {
-  font-size:28rpx;
+  font-size:22rpx;
   padding:12rpx;
+}
+
+.btn-invite {
+  font-size:26rpx;
+  margin-left: 20rpx;
+  color:palevioletred;
+  display:inline-block;
+  padding:0 3rpx;
+  background-color: transparent;
+}
+.btn-invite::after {
+  border: 0;
 }

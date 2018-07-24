@@ -4,17 +4,21 @@ Page({
     isGrant:false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHaveTeam: true,
-    btn:"即刻进入"
+    btn:"即刻进入",
+
+    option:{}
   },
   onLoad: function (option) {
     var that = this;
     var _action = option.action || "";
     var _scene = decodeURIComponent(option.scene||"");
     console.log("_scene:" + _scene);
+    this.setData({
+      option: option
+    })
     if (_scene == 'bond') {
-        App.log("microTeam", _scene);
         App.WxService.navigateTo("/page/ai/pages/bond/index");
-    }else if (_scene.indexOf('ai')==0) {
+    } else if (_scene.indexOf('ai')==0) {
       _scene = _scene.substring(3, _scene.length);
       App.WxService.navigateTo("/page/ai/pages/ai/ocr/index?id=" + _scene);
     }else{
@@ -22,10 +26,27 @@ Page({
         wx.getSetting({
           success: function (res) {
             if (res.authSetting['scope.userInfo']) {
-              App.log("用户已授权过.")
               that.setData({
                 isGrant: true
               });
+              
+              if (_scene.indexOf('shareproject') == 0) {
+                //当前用户加入项目
+                App.HttpServiceWork.projectShare({
+                  token: App.getToken(),
+                  prjid: option.prjid || ""
+                }).then(json => {
+                  if (json && json.ret) {
+                    App.alert("加入成功!", function () {
+                      App.WxService.navigateTo("/page/index/index");
+                    });
+                  } else {
+                    App.alert(json.msg || "加入项目失败！");
+                  }
+                }, err => {
+                  App.alert(json.msg || "加入项目失败！");
+                });
+              } 
 
               if (App.globalData.shareTeamId!=""){
                 App.log("加入团队确认：", App.globalData.shareTeamId);
@@ -50,6 +71,9 @@ Page({
                   App.login();
                 }
               });
+
+              
+              
               /*
               wx.reLaunch({
                 url: '/pages/index/index'
@@ -61,7 +85,7 @@ Page({
         
         if (option.scene) {
           var _scene = decodeURIComponent(option.scene);
-          App.log("scene:", _scene);
+          App.log("*************scene:", _scene);
           if (_scene.indexOf("s.team=") >= 0) {
             var _shareTeamId = _scene.substring("s.team=".length, _scene.length);
             App.log("share teamid:", _shareTeamId);
@@ -84,7 +108,7 @@ Page({
               });
             }
             */
-          } 
+          }
         }else{
           if (_action === "createTeam") {
             this.setData({
@@ -145,14 +169,22 @@ Page({
       });  
   },
   bindGetUserInfo: function (e) {
-    console.log("*******bind user info:",e);
+    var that = this;
     if(typeof e.detail.userInfo == "undefined"){
       App.alert("必须授权登录才能使用!")
     }else{
       // setTimeout(() => {
       //   this.doRelauch();
       // },500);
-      App.login();
+      
+      App.login(function(res){
+        var _scene = decodeURIComponent(that.data.option.scene || "");
+        if (_scene && _scene ==="shareproject"){
+          wx.redirectTo({
+            url: '/pages/starter/starter?scene=shareproject&prjid=' + that.data.option.prjid
+          })
+        }
+      });
     }
   }
 })

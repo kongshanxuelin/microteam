@@ -16,6 +16,7 @@ class Service extends ServiceBase {
       teamGet: 'r/user/getTeam',
 			teamChange	: 	'r/user/teamChange',
       teamShare: 'r/user/teamShare',
+      projectShare: 'r/user/projectShare',
       teamMembers: 'r/user/teamMembers',
 			//项目
 			projectList: 'r/project/myProjects',  //我的项目
@@ -134,6 +135,9 @@ class Service extends ServiceBase {
 	}
   teamShare(params) {
     return this.getRequest(this.$$path.teamShare, params)
+  }
+  projectShare(params) {
+    return this.getRequest(this.$$path.projectShare, params)
   }
   teamMembers(params) {
     return this.getRequest(this.$$path.teamMembers, params)

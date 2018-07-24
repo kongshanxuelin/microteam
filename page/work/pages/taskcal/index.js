@@ -7,7 +7,7 @@ Page({
    */
   data: {
     //Tabs
-    tabs: ["收入", "支出"],
+    tabs: ["项目收入", "项目支出"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,

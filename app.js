@@ -87,7 +87,11 @@ App({
                           that.putCache("teamName", that.globalData.user.user.teamName);
                         }
                         that.putCache("user",res.data);
-                        that.launchStartPage();
+                        if (typeof cb === "function"){
+                          cb();
+                        }else{
+                          that.launchStartPage();
+                        }
                     }
                   }
                 })
