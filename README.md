@@ -11,7 +11,7 @@
 
 服务端代码已完全开放，基于Java开发：
 
-https://github.com/kongshanxuelin/microteam
+https://github.com/kongshanxuelin/microteam-server
 
 ## 概述
 
