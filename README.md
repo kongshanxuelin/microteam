@@ -7,6 +7,12 @@
 
 ----------
 
+## 服务端代码
+
+服务端代码已完全开放，基于Java开发：
+
+https://github.com/kongshanxuelin/microteam
+
 ## 概述
 
 [小团队管理](http://code.sumslack.com/projects.jsp?id=mql6e4afb4) 是一款开源的微信小程序，主要用于日常的小团队管理，功能列表如下：
