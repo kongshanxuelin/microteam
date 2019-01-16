@@ -36,6 +36,12 @@ https://github.com/kongshanxuelin/microteam-server
 
 <img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/ai.jpg' alt='preview' />
 
+# 赞助
+
+如有帮助，欢迎赞助
+
+<img src="http://h5.sumslack.com/wechat.jpg" width="200px" /> <img src="http://h5.sumslack.com/alipay.jpg" width="200px" />
+
 #1.8.0（开发中）
 - 小程序中新增管理Web页（签到，流程定义和自定义模板）
 
