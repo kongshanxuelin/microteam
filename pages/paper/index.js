@@ -47,11 +47,11 @@ Page({
       }else{
         if(typeof(t)!="undefined" && id!=""){
           this.setData({
-            path: App.Config.domain + "paper/" + id
+            path: App.Config.paperDomain + "paper/" + id
           });
         }else{
           this.setData({
-            path: App.Config.domain + "?token=" + token
+            path: App.Config.paperDomain + "?appid=" + App.Config.appid+"&token=" + wx.getStorageSync("user").uid
           });
         }
       }

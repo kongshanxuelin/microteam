@@ -5,12 +5,16 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.6.7",
 	"appid": "wx2231c1ab9fc46fef",
-	"projectname": "%E5%B0%8F%E5%9B%A2%E9%98%9F",
+	"projectname": "microteam",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -29,14 +33,14 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "识别小程序码",
 					"pathName": "pages/starter/starter",
-					"query": "scene=bond",
-					"scene": "1048"
+					"query": "scene=sc.paper.id%3Dvk26nr09og",
+					"scene": 1048
 				},
 				{
 					"id": 1,

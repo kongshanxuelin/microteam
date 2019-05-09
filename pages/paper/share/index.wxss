@@ -2,7 +2,10 @@
 background-color:#E8E8E8;
 color:#000;
 }
-
+.paper-num-text {
+  color:#333;
+  font-weight: bold;
+}
 .cardBack{
   
 }

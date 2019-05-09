@@ -42,8 +42,8 @@ https://github.com/kongshanxuelin/microteam-server
 
 <img src="http://h5.sumslack.com/wechat.jpg" width="200px" /> <img src="http://h5.sumslack.com/alipay.jpg" width="200px" />
 
-#1.8.0（开发中）
-- 小程序中新增管理Web页（签到，流程定义和自定义模板）
+#1.8.1（2019.05.08）
+- 新增调查表管理和调查表分享功能
 
 #1.7.6 (2018.06.22)
 - 分包加载，重构项目结构

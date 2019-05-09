@@ -1,10 +1,11 @@
 const App = getApp()
 Page({
   data: {
-    paper:{num:0,score:0,title:"xx",d:"yyyy"},
+    paper:{num:0,score:0,title:"xx",d:"yyyy",lang:"笔试题"},
     rate:"",
     id:"",//试卷ID或答卷ID
     t:"",//当type=paper时，无需显示打败了xxx
+    num:0,//问卷有几个问题
     score:""
   },
 
@@ -20,11 +21,12 @@ Page({
         id:rid
       });
       console.log(this.data.t)
-      App.HttpServicePaper.paperGet({ "token": App.getToken(), "rid": rid, "type": this.data.t }).then(json => {
+      App.HttpServicePaper.paperGet({ "token": wx.getStorageSync("user").uid, "rid": rid, "type": this.data.t }).then(json => {
         this.setData({
           paper : json.paper,
-          rate : json.rate,
-          score : json.score
+          num:json.num || 0,
+          rate : json.rate || 0,
+          score : json.score || 0
         });
       });
   },
@@ -37,6 +39,7 @@ Page({
     App.HttpServicePaper.paperGenImage({ 
       "token": App.getToken(), 
       "id": this.data.id, 
+      "appid": App.Config.appid,
       "type": this.data.t }).then(json => {
         if(json.ret){
           wx.downloadFile({

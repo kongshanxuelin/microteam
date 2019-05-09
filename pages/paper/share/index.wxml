@@ -5,7 +5,14 @@
               <view class="weui-flex-row box-tb" style="margin-left:10px;margin-top:10px;margin-bottom:10px;color:#333;">
                 <view class="weui-flex__item name">{{paper.title}}</view>
                 <view class="weui-flex__item title" style="margin-top:10px">{{paper.d}}</view>
-                <view wx:if="{{t!='paper'}}" class="weui-flex__item desc" style="margin-top:10px">我在本测试题中获得了 <text class="fs">{{score}}</text> 分，打败了 <text class="fs">{{rate}}</text> 的答题者！</view>
+                <view wx:if="{{t!='paper'}}" class="weui-flex__item desc" style="margin-top:10px">
+                <block wx:if="{{paper.lang.indexOf('题')>=0}}">
+                我在本测试题中获得了 <text class="fs">{{score}}</text> 分，打败了 <text class="fs">{{rate}}</text> 的答题者！
+                </block>
+                <block>
+                  这是一份问卷调查，共有 <text class="paper-num-text">{{num}}</text> 个问题！
+                </block>
+                </view>
               </view>  
            </view>
            <view style="position:absolute;top:8px;right:8px;">

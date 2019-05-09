@@ -12,15 +12,19 @@ Page({
     var that = this;
     var _action = option.action || "";
     var _scene = decodeURIComponent(option.scene||"");
-    console.log("_scene:" + _scene);
     this.setData({
       option: option
     })
     if (_scene == 'bond') {
         App.WxService.navigateTo("/page/ai/pages/bond/index");
-    } else if (_scene.indexOf('ai')==0) {
+    }else if (_scene.indexOf('ai')==0) {
       _scene = _scene.substring(3, _scene.length);
       App.WxService.navigateTo("/page/ai/pages/ai/ocr/index?id=" + _scene);
+    } else if (_scene.indexOf('sc.paper.id') == 0) {  //打开调查问卷
+      var paperId = _scene.substring(_scene.lastIndexOf("=") + 1, _scene.length).trim();
+      paperId = paperId.replace(".paper","");
+      console.log("#############:", paperId)
+      App.WxService.navigateTo("/pages/paper/index?type=paper&id=" + paperId);
     }else{
         //查看用户是否有过授权
         wx.getSetting({

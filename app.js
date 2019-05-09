@@ -10,7 +10,6 @@ import Config from 'etc/config'
 App({
   onLaunch: function (options) {
     if (options.query.scene && options.query.scene!=""){
-      this.log("app launch:", decodeURIComponent(options.query.scene));
       this.globalData.scene = decodeURIComponent(options.query.scene);
       //如果是通过识别小程序码进来的
       if (this.globalData.scene!="") return;
