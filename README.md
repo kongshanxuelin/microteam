@@ -1,71 +1,73 @@
-[![QQ](http://pub.idqqimg.com/wpa/images/group.png)](https://jq.qq.com/?_wv=1027&k=5HWgxBZ)
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-微信小团队管理小程序
-===================
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-欢迎加入QQ群讨论（群号：604844003）
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-----------
+## Description
 
-## 服务端代码
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-服务端代码已完全开放，基于Java开发：
+## Installation
 
-https://github.com/kongshanxuelin/microteam-server
+```bash
+$ yarn install
+```
 
-## 概述
+## Running the app
 
-[小团队管理](http://code.sumslack.com/projects.jsp?id=mql6e4afb4) 是一款开源的微信小程序，主要用于日常的小团队管理，功能列表如下：
-- 团队公告；
-- 团队工作流程定义与办理；
-- 团队圈；
-- 团队活动组织；
-- 团队考勤；
-- 任务指派；
-- 工作报告（日报、周报、月报）；
-- 共享文档；
-- 团队小程序分享；
-- 团队通讯录；
+```bash
+# development
+$ yarn run start
 
-使用微信扫描二维码查看效果：
+# watch mode
+$ yarn run start:dev
 
-<img src='http://h5.sumslack.com/img/mteam1.jpg' width='320' alt='preview' />
+# production mode
+$ yarn run start:prod
+```
 
+## Test
 
-效果图：
+```bash
+# unit tests
+$ yarn run test
 
-<img src='http://h5.sumslack.com/img/mteam_preview1.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview2.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/mteam_preview3.jpg' alt='preview' /><img src='http://h5.sumslack.com/img/ai.jpg' alt='preview' />
+# e2e tests
+$ yarn run test:e2e
 
-# 赞助
+# test coverage
+$ yarn run test:cov
+```
 
-如有帮助，欢迎赞助
+## Support
 
-<img src="http://h5.sumslack.com/wechat.jpg" width="200px" /> <img src="http://h5.sumslack.com/alipay.jpg" width="200px" />
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-#1.8.1（2019.05.08）
-- 新增调查表管理和调查表分享功能
+## Stay in touch
 
-#1.7.6 (2018.06.22)
-- 分包加载，重构项目结构
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-#1.7.0
-- 新增团队活动
+## License
 
-#V1.6.1
-- 活动生效时的微信提醒；
-- 
-#V1.6.0
-- 新增活动管理，方便组织团队活动；
-
-#V1.5.3
-- 新增人脸融合等功能；
-
-#V1.5.0
-- 整合了Tentcent AI API，增加了一些好玩的小功能；
-
-#1.4.5
-- 新增债券智能识别；
-
-#1.4.4
-- Bug Fixed
-- 去掉了没用的功能；
+Nest is [MIT licensed](LICENSE).
